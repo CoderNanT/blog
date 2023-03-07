@@ -15,7 +15,7 @@ style:
 
   article_img_align: center # 设置文章内容页的图片排列位置
 
-  right_side_width: 500px # 设置右侧 TOC 目录模块的宽度
+  right_side_width: 300px # 设置右侧 TOC 目录模块的宽度
 
   content_max_width: 1000px # 设置内容区域的最大宽度
 
@@ -216,6 +216,11 @@ plugins:
         artist: Coldplay
         url: https://evan.beee.top/music/Something%20Just%20Like%20This%20-%20The%20Chainsmokers%E3%80%81Coldplay.mp3
         cover: https://evan.beee.top/music/covers/Something_Just_Like_This.png
+
+      - name: Diamonds
+        artist: Rihanna
+        url: http://m701.music.126.net/20230307114007/e7dfa2e2adbff9172312f8dcc4ccc5b2/jdyyaac/0f58/065c/555b/824faa32761639c0286bb1438609e12a.m4a
+        cover: https://p1.music.126.net/0PZOF7P9ptROSxoDWSPKHw==/4445325511102051.jpg?param=66y66
 
 version: 1.1.6
 
