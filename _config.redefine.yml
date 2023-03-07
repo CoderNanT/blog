@@ -1,0 +1,226 @@
+# 主题配置文件
+# https://redefine-docs.ohevan.com/docs/intro 文档
+base_info:
+  title: 南 # 网站标题
+  author: 南 # 作者名
+  url: https://redefine.ohevan.com # 网站域名
+  # logo_img: '' # 作者名头像
+
+style:
+  primary_color: "#005080" # 网站主题色
+
+  avatar: "" # 设置作者头像，将显示在文章内容页
+
+  favicon: "" # 网页图标
+
+  article_img_align: center # 设置文章内容页的图片排列位置
+
+  right_side_width: 500px # 设置右侧 TOC 目录模块的宽度
+
+  content_max_width: 1000px # 设置内容区域的最大宽度
+
+  nav_color: # 导航栏的渐变背景设置
+    left: "#f78736" # 左边的颜色
+    right: "#367df7" # 右边的颜色
+    transparency: 35 # 导航栏的背景透明度 (10-99)
+
+  hover: # 设置鼠标悬浮时的样式
+    shadow: true # 阴影效果
+    scale: false # 缩放效果
+
+  # 开启后将显示在网站首页
+  first_screen:
+    enable: true # 是否开启首屏
+    background_image: # 首屏背景图片，可使用 本地图片 或 图片外链 URL
+      light: https://evan.beee.top/img/wallhaven-wqery6-light.webp # 为亮色模式的背景图
+      dark: https://evan.beee.top/img/wallhaven-wqery6-dark.webp # 为暗色模式的背景图
+
+    title_color: # 首屏标题的文字颜色
+      light: "#fff" # 为亮色模式的文字颜色
+      dark: "#d1d1b6" # 为暗色模式的文字颜色
+
+    description: 勿在浮沙筑高 # 首屏标题
+
+    custom_font: # 自定义字体
+      enable: false # 是否启用自定义字体
+      font_family: # 字体名称
+      font_url: # 字体链接
+
+  # 设置页面滚动时的样式
+  scroll:
+    progress_bar: # 页面滚动时在网站顶部显示滚动进度条
+      enable: true
+    percent: # 页面滚动时在网站右下角显示滚动百分比
+      enable: false
+
+social_contact: # 设置第三方社交链接
+  enable: true
+  # https://redefine-docs.ohevan.com/docs/configuration-guide/social_contact
+  links:
+    github: "https://github.com/codingiove"
+    email: 1445683324@qq.com
+
+menu: # 网站头部导航菜单
+  # Home: 一级菜单栏名称
+  # path: / 网址，可以为相对路径或者绝对路径
+  # icon: fa-regular fa-house Fontawesome 图标名称（可选） https://fontawesome.com/
+
+  # Links: 一级菜单栏名称
+  #   submenus:
+  #       key: value 第一个链接
+
+  首页:
+    path: /
+    icon: fa-regular fa-house
+
+  笔记:
+    path: none
+    icon: fa-regular fa-archive
+
+home_article: # 设置首页文章块底部的日期格式，标签和分类信息显示
+  date_format: YYYY-MM-DD HH:mm:ss
+  category: # 文章分类
+    enable: true
+    limit: 8
+  tag: # 文章标签
+    enable: true
+    limit: 8
+
+post: # 设置是否显示文章字数统计、阅读时长和作者标识
+  word_count: # 如果要开启文章字数统计和阅读时长，需在 Hexo 项目根目录下安装依赖 npm i hexo-wordcount
+    enable: true
+    wordcount: true # 文章字数统计
+    min2read: true # 文章阅读时长
+
+  author_label: # 设置文章内容页的作者标识
+    enable: true
+    auto: true # auto 自动生成 Lv1、Lv2、Lv3 ......，判断依据为文章数量
+
+code_block:
+  copy: true # 是否开启复制按钮
+  style: mac # 代码块样式 mac | simple
+  custom_font: # 自定义字体
+    enable: false
+    font_family: # font family name
+    font_url: # font url
+
+toc: # 设置文章TOC目录结构，非常实用的功能，可以快速查看文章目录结构和跳转，建议开启
+  enable: true
+
+  # 给目录结构自动加上数字编号
+  number: false
+
+  # 自动展开所有的目录结构
+  expand_all: true
+  # expand_all: false 边滚动页面边展开对应的位置的目录
+
+  # 打开文章页时是否自动打开 TOC 目录结构
+  init_open: true
+
+copyright_info: # 开启文章内容页的文章版权信息模块
+  enable: false
+
+website_count: # 设置网站计数，Redefine 主题内置不蒜子计数，无需额外配置，直接选择你要开启的计数项即可
+  busuanzi_count:
+    enable: true
+    site_uv: true # 网站访问人数（显示在底部）
+    site_pv: true # 网站总访问量（显示在底部）
+    page_pv: true # 文章阅读次数（显示在文章内容页）
+
+local_search: # 设置网站搜索功能，非常实用，建议开启。开启后，头部导航栏右侧将出现搜索按钮
+  # npm install hexo-generator-searchdb
+  # https://redefine-docs.ohevan.com/docs/configuration-guide/local_search
+  enable: true
+  preload: true
+
+comment: # 开启和设置主题的评论系统
+  # https://redefine-docs.ohevan.com/docs/configuration-guide/comment
+  enable: false
+  use: waline # values: waline | gitalk | twikoo
+
+  # Waline
+  # See: https://waline.js.org/guide/get-started.html
+  waline:
+    serverUrl: # Waline server url(vercel) example: https://example.example.com
+    lang: zh-CN # Waline language, default: zh-CN. See: https://waline.js.org/guide/client/i18n.html
+
+  # Gitalk
+  # See: https://github.com/gitalk/gitalk
+  gitalk:
+    github_id: # GitHub repo owner
+    repository: # Repository name to store issues
+    client_id: # GitHub Application Client ID
+    client_secret: # GitHub Application Client Secret
+
+  # Twikoo
+  # See: https://github.com/imaegoo/twikoo
+  twikoo:
+    visitor: true
+    env_id: # Vercel or Tencent Cloud Function environment ID
+    region: # environment region. If select Guangzhou, fill in "ap-guangzhou". (optional)
+
+friend_links: # 用来设置友链页面中的列数
+  columns: 2
+
+rss: # https://redefine-docs.ohevan.com/docs/configuration-guide/rss
+  enable: false
+
+lazyload: # 开启图片懒加载
+  enable: true
+
+cdn: # CDN
+  enable: false
+
+pjax: # PJAX 开启后，点击页面跳转时，网页顶部会出现彩色进度条
+  enable: true
+
+recommended_article: # 文章推荐，需要 npm install nodejieba
+  enable: false
+  title: 推荐阅读
+  icon: fa-solid fa-bookmark
+  max_count: 3 # 最大文章推荐数
+  placeholder_img: https://evan.beee.top/img/wallhaven-wqery6-light.webp # 当文章没有设置头图时的默认替代图片
+  # 在这些目录 (相对 source/) 下面的文章不会进行推荐
+  skip_dirs:
+    - wiki/
+
+fontawesome:
+  thin: false # use fontawesome thin version or not
+  light: false # use fontawesome light version or not
+  duotone: false # use fontawesome duotone version or not
+  sharp_solid: false # use fontawesome sharp-solid version or not
+
+footer: # 设置网站底部的信息展示
+  runtime: true # 是否显示网站运行时间
+  start_time: 2023/3/7 00:00:00 # 网站起始时间。用于计算网站运行时间和版权日期
+  customize: # 页脚自定义内容。支持 html 代码
+  icp: # 网站备案号
+    enable: false
+    number: # 备案号
+    url: # 网址
+
+inject: # 该配置项用于在 header 和 footer 添加自定义的 css script 等 html代码
+  enable: false
+  head: # 头部添加代码
+    -
+    -
+  footer: # 在页脚添加代码
+    -
+    -
+
+plugins:
+  aplayer: # APlayer
+    enable: true
+    audio:
+      - name: Something Just Like This
+        artist: Coldplay
+        url: https://evan.beee.top/music/Something%20Just%20Like%20This%20-%20The%20Chainsmokers%E3%80%81Coldplay.mp3
+        cover: https://evan.beee.top/music/covers/Something_Just_Like_This.png
+
+version: 1.1.6
+
+search:
+  path: search.json
+  field: post
+  content: true
+  format: striptags
