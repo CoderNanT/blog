@@ -1,8 +1,8 @@
 ---
-title: HTML+CSS
-date: "2023-03-07 08:56:21"
-updated: "2023-03-07 08:56:23"
-tags: "HTML+CSS"
+  title: HTML+CSS
+  date: "2023-03-07 22:30:00"
+  updated: "2023-03-07 22:30:00"
+  tags: "HTML+CSS"
 ---
 
 # 认识HTML
@@ -11,7 +11,7 @@ tags: "HTML+CSS"
   - HTML元素是构建网站的基石
 
 - **什么是标记语言（markup language ）？**
-  - 由无数个**标记（标签）**组成
+  - 由无数个<b>标记（标签）</b>组成
   - 是对**某些内容进行特殊的标记**，以供其他**浏览器识别处理**
   - 比如使用`<h2></h2>`标记的文本会被识别为  **“标题”**  进行**加粗、文字放大**显示
   - 由**标签和内容**组成的称为**元素（element）**
@@ -25,7 +25,7 @@ tags: "HTML+CSS"
 
 ## HTML文件的特点 – 扩展名
 
-- HTML文件的拓展名是**.htm\.html**
+- HTML文件的拓展名是<b>.htm\.html</b>
   - 因历史遗留问题，Win95\Win98系统的文件拓展名不能超过3字符，所以使用.htm
   - 现在统一使用 **.html**
 
@@ -33,7 +33,7 @@ tags: "HTML+CSS"
 
 ## 认识元素
 
-- 我们会发现HTML本质上是由一系列的**元素（Element）**构成的
+- 我们会发现HTML本质上是由一系列的<b>元素（Element）</b>构成的
 - **什么是元素（Element）呢？**
   - **元素**是网页的一部分
   - 一个元素可以**包含一个数据项，或是一块文本，或是一张照片，亦或是什么也不包含**
@@ -143,7 +143,7 @@ tags: "HTML+CSS"
 
 ## html元素
 
-- <html> 元素 表示一个 HTML 文档的**根**（顶级元素），所以它也被称为**根元素**
+- <html> 元素 表示一个 HTML 文档的<b>根</b>（顶级元素），所以它也被称为<b>根元素</b>
 
 - 所有其他元素必须是**此元素的后代**
 
@@ -219,9 +219,9 @@ tags: "HTML+CSS"
 ### 图片的路径
 
 - **设置img的src时，需要给图片设置路径**
-  - **网络图片：**一个URL地址
+  - <b>网络图片：</b>一个URL地址
     - 网络图片的设置非常简单，给一个地址即可
-  - **本地图片：**本地电脑上的图片，后续会和html一起部署到服务
+  - <b>本地图片：</b>本地电脑上的图片，后续会和html一起部署到服务
 - **本地图片的路径有两种方式：**
   - 方式一：**绝对路径**（几乎不用）
     - 从电脑的根目录开始一直找到资源的路径
@@ -274,9 +274,9 @@ tags: "HTML+CSS"
 ## div元素、span元素的历史
 
 - 在HTML中**有两个特殊的元素div元素、span元素**
-  - **div元素：**division，分开、分配的意思
-  - **span元素：**跨域、涵盖的意思
-- **这两个元素有什么作用呢？**无所用、无所不用。
+  - <b>div元素：</b>division，分开、分配的意思
+  - <b>span元素：</b>跨域、涵盖的意思
+- <b>这两个元素有什么作用呢？</b>无所用、无所不用。
 - **产生的历史：**
   - 网页的发展早期是**没有css**，这个时候我们必须通过**语义化元素**来告知浏览器一段文字如何显示
   - 后来**出现了css**，**结构和样式需要分离**，这个时候**html只需要负责结构**即可
@@ -291,7 +291,7 @@ tags: "HTML+CSS"
 ## div元素、span元素的区别
 
 - 这个时候有一个问题：**我出现一个不就可以了吗？**
-- div元素和span元素都是**“纯粹的” 容器**，也可以把他们理解成**“盒子”**，它们都是用来**包裹内容**的
+- div元素和span元素都是<b>“纯粹的” 容器</b>，也可以把他们理解成<b>“盒子”</b>，它们都是用来<b>包裹内容</b>的
   - **div元素：**多个div元素包裹的内容会在**不同的行**显示
     - 一般作为其他元素的父容器，把其他元素包住，代表一个整体
     - 用于把网页分割为多个独立的部分
@@ -349,7 +349,7 @@ tags: "HTML+CSS"
 ## 认识URL
 
 - **URL 代表着是统一资源定位符（Uniform Resource Locator）**
-- **通俗点说：**URL 无非就是一个给定的独特资源在 Web 上的地址
+- <b>通俗点说：</b>URL 无非就是一个给定的独特资源在 Web 上的地址
   - 理论上说，每个有效的 URL 都指向一个唯一的资源
   - 这个资源可以是一个 HTML 页面，一个 CSS 文档，一幅图像，等等
 
@@ -435,9 +435,9 @@ tags: "HTML+CSS"
 - 按照进制的概念，来**理解一下十进制**：
   - 当**数字到9的时候**，用**一位**已经**表示不了了**，那么就**进一位变成2位**
 - 按照上面的来理解，**二进制、八进制、十六进制**：
-  - **二进制：**当数字到1的时候，用一位已经表示不了了，那么就进一位
-  - **八进制：**当数字到7的时候，用一位已经表示不了了，那么就进一位
-  - **十六进制：**等等，用一位如何表示十六个数字呢？a(10)、b(11)、c(12) 、 d(13) 、 e(14) 、 f(15)
+  - <b>二进制：</b>当数字到1的时候，用一位已经表示不了了，那么就进一位
+  - <b>八进制：</b>当数字到7的时候，用一位已经表示不了了，那么就进一位
+  - <b>十六进制：</b>等等，用一位如何表示十六个数字呢？a(10)、b(11)、c(12) 、 d(13) 、 e(14) 、 f(15)
 
 
 
@@ -752,11 +752,11 @@ tags: "HTML+CSS"
 
 ### 后代选择器
 
--  **后代选择器一：所有的后代(直接/间接的后代)**
+-  <b>后代选择器一：所有的后代（直接/间接的后代）</b>
   
   - 选择器之间以**空格**分割
   
--  **后代选择器二：直接子代选择器 (必须是直接子代) **
+-  <b>后代选择器二：直接子代选择器（必须是直接子代）</b>
   
   - 选择器之间以 **>** 分割
   
@@ -807,10 +807,10 @@ tags: "HTML+CSS"
 
 ### 兄弟选择器
 
-- **兄弟选择器一：相邻兄弟选择器**
+- <b>兄弟选择器一：相邻兄弟选择器</b>
   
   - 使用符号 **+** 连接
-- **兄弟选择器二：普遍兄弟选择器 **
+- <b>兄弟选择器二：普遍兄弟选择器</b>
   
   - 使用符号 **~** 连接
   
@@ -1701,7 +1701,7 @@ box-sizing用来设置盒子模型中宽高的行为
 - 使用过程如下
 
   - 将**字体放到对应的目录**中
-  - 通过**@font-face来引入字体**，并且**设置格式**
+  - 通过<b>@font-face来引入字体</b>，并且**设置格式**
   - 使用字体
 
 - 注意: @font-face 用于加载一个自定义的字体
@@ -1734,10 +1734,10 @@ box-sizing用来设置盒子模型中宽高的行为
 - 我们刚才使用的字体文件是 .ttf，它是TrueType字体
   - 在开发中某些浏览器可能不支持该字体，所以为了浏览器的兼容性问题，我们需要有对应其他格式的字体
 - TrueType字体：拓展名是 .ttf
-  - **OpenType/TrueType字体：**拓展名是 .ttf、.otf，建立在TrueType字体之上
-  - **Embedded OpenType字体：**拓展名是 .eot，OpenType字体的压缩版
-  - **SVG字体：**拓展名是 .svg、 .svgz
-  - **WOFF表示Web Open Font Format web开放字体：**拓展名是 .woff，建立在TrueType字体之上
+  - <b>OpenType/TrueType字体：</b>拓展名是 .ttf、.otf，建立在TrueType字体之上
+  - <b>Embedded OpenType字体：</b>拓展名是 .eot，OpenType字体的压缩版
+  - <b>SVG字体：</b>拓展名是 .svg、 .svgz
+  - <b>WOFF表示Web Open Font Format web开放字体：</b>拓展名是 .woff，建立在TrueType字体之上
 
 - 这个网站来生产对应的字体文件
   - https://font.qqe2.com
@@ -1846,260 +1846,461 @@ box-sizing用来设置盒子模型中宽高的行为
 
 ## CSS元素定位
 
-- 默认情况下，元素都是按照 **normal flow（标准流、常规流、正常流、文档流）**进行排布
-  - 从左到右、从上到下按顺序摆放好
+### 标准流（Normal Flow）
+
+- 默认情况下，元素都是按照<b>normal flow（标准流、常规流、正常流、文档流【document flow】）</b>进行排布
+  - **从左到右、从上到下**按顺序摆放好
   - 默认情况下，**互相之间不存在层叠现象**
 
 
 
-### relative
+### 认识元素的定位
 
-- 元素按照 **文档流** 布局
+- 定位允许您从**正常的文档流布局中取出元素**，并使它们具有不同的行为
+  - 例如**放在另一个元素的上面**
+  - 或者**始终保持在浏览器视窗内的同一位置**
+
+
+
+### 相对定位 - relative
+
+- 元素按照**文档流**布局
 -  可以通过**left、right、top、bottom**进行定位
-  - 定位参照对象是**元素自己原来的位置**
+  - 定位**参照对象**是元素**自己原来的位置**
+
+- 相对定位的应用场景
+
+  - 在**不影响其他元素位置的前提**下，对**当前元素位置进行微调**
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        div {
+          font-size: 20px;
+        }
+  
+        span {
+          font-size: 12px;
+          position: relative;
+          bottom: 8px;
+        }
+      </style>
+    </head>
+    <body>
+      <div>3<span>2</span> + 2<span>3</span> = 17</div>
+    </body>
+  </html>
+  ```
 
 
 
-### absolute
+### 绝对定位 - absolute
 
-- 元素脱离 **文档流 **
+- 元素**脱离文档流**
 
 - 可以通过**left、right、top、bottom**进行定位
-  - 定位参照对象是**最邻近的定位祖先元素**
+  - 定位参照对象是**最近的定位祖先元素**
   - 如果**找不到这样的祖先元素，参照对象是视口（文档的可视区域）**
+  
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .container {
+          width: 800px;
+          height: 800px;
+          background-color: #f00;
+  
+          position: relative;
+        }
+  
+        .box {
+          width: 500px;
+          height: 500px;
+          background-color: #0f0;
+  
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+  
+        strong {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="box">
+          <span>我是span元素</span>
+          <strong>我是strong元素</strong>
+          <div>我是div元素</div>
+        </div>
+      </div>
+    </body>
+  </html>
+  ```
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .container {
-        width: 800px;
-        height: 800px;
-        background-color: #f00;
 
-        position: relative;
-      }
 
-      .box {
-        width: 500px;
-        height: 500px;
-        background-color: #0f0;
+### 固定定位 - fixed
 
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
+- 元素**脱离文档流**
+- 可以通过**left、right、top、bottom**进行定位
+  - 定位**参照对象**是**视口（文档的可视区域）**
+- 当页面滚动时，固定不动
 
-      strong {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .handle {
+          position: fixed;
+          right: 30px;
+          bottom: 30px;
+        }
+  
+        .handle .item {
+          width: 80px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          background-color: brown;
+          color: #fff;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+  
+        .handle .item:hover {
+          background-color: red;
+        }
+  
+        .top {
+          margin-bottom: 10px;
+        }
+      </style>
+    </head>
+  
+    <body>
+      <div class="handle">
+        <div class="item top">顶部</div>
+        <div class="item bottom">反馈</div>
+      </div>
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+    </body>
+  </html>
+  ```
+
+
+
+### absolute/fixed元素的特点(一)
+
+-  可以随意设置宽高
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        span {
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          background-color: #0f0;
+        }
+      </style>
+    </head>
+    <body>
+      <span>我是span元素</span>
+    </body>
+  </html>
+  ```
+
+- 宽高默认由内容决定
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .box {
+          position: absolute;
+          background-color: #0f0;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box">我是box元素</div>
+    </body>
+  </html>
+  ```
+
+- 不再受文档流的约束
+
+  - 不再**严格按照从上到下、从左到右**排布
+  - 不再**严格区分块级(block)、行内级(inline)，行内块级(inline-block)的很多特性**都会消失
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .box span {
+          position: absolute;
+          top: 150px;
+          left: 150px;
+          width: 200px;
+          height: 200px;
+          background-color: #0f0;
+        }
+      </style>
+    </head>
+    <body>
       <div class="box">
         <span>我是span元素</span>
         <strong>我是strong元素</strong>
-        <div>我是div元素</div>
       </div>
-    </div>
-  </body>
-</html>
-```
+    </body>
+  </html>
+  ```
+
+- 不再给父元素汇报宽高数据
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .box {
+          background-color: #f00;
+        }
+  
+        .box span {
+          /* 没加 position: absolute 时，父元素高度是由内容撑起的 */
+          position: absolute;
+          background-color: #0f0;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box">
+        <span>我是span元素</span>
+      </div>
+    </body>
+  </html>
+  ```
 
 
 
-### fixed
+### absolute/fixed元素的特点(二)
 
-- 元素脱离 **文档流 **
-- 可以通过**left、right、top、bottom**进行定位
-  - 定位参照对象是**视口（文档的可视区域）** 
-- 当页面滚动时，固定不动
+- 绝对定位元素（absolutely positioned element）
+  - position值为**absolute**或者**fixed**的元素
 
+- 对于绝对定位元素来说
 
+  - 定位参照对象的宽度 = left + right + margin-left + margin-right + 绝对定位元素的实际占用宽度
+  - 定位参照对象的高度 = top + bottom + margin-top + margin-bottom + 绝对定位元素的实际占用高度
 
-### 将position设置为absolute/fixed元素的特点
+- 如果希望绝对定位元素在定位参照对象中居中显示，可以给绝对定位元素设置以下属性
 
-#### 1.可以随意设置宽高
+  - left: 0、right: 0、top: 0、bottom: 0、margin: auto
+  - 另外，还得**设置具体的宽高值**（宽高小于定位参照对象的宽高）
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      span {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background-color: #0f0;
-      }
-    </style>
-  </head>
-  <body>
-    <span>我是span元素</span>
-  </body>
-</html>
-```
-
-
-
-#### 2. 宽高默认由内容决定
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .box {
-        position: absolute;
-        background-color: #0f0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">我是box元素</div>
-  </body>
-</html>
-```
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .box {
+          width: 800px;
+          height: 300px;
+          background-color: #f00;
+          position: relative;
+        }
+  
+        .container {
+          width: 200px;
+          height: 100px;
+          background-color: #0f0;
+  
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box">
+        <div class="container"></div>
+      </div>
+    </body>
+  </html>
+  ```
 
 
 
-#### 3.不再受文档流的约束
+### auto到底是什么?
 
-- 不再**严格按照从上到下、从左到右排布**
-- 不再**严格区分块级(block)、行内级(inline)，行内块级(inline-block)的很多特性**都会消失
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .box span {
-        position: absolute;
-        top: 100px;
-        left: 100px;
-        width: 200px;
-        height: 200px;
-        background-color: #0f0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">
-      <span>我是span元素</span>
-    </div>
-  </body>
-</html>
-
-```
+- 800 = 200 + margin-left（0）+ margin-right（0）+ left（0）+ right（0）
+- auto -> 交给浏览器你来出来
+- width: auto
+  - 行内非替换元素 width：包裹内容
+  - 块级元素 width：包含块的宽度
+  - 绝对定位元素 width：包裹内容
 
 
 
-#### 4.不再给父元素汇报宽高数据
+### 粘性定位 - sticky
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .box {
-        background-color: #f00;
-      }
+- 另外还有一个定位的值是**position: sticky**，比起**其他定位值要新一些**
+  - 可以看做是**相对定位和固定(绝对)定位的结合体**
+  - 它允许被定位的元素**表现得像相对定位一样**，直到它滚动到某个阈值点
+  - 当**达到这个阈值点**时, 就会**变成固定(绝对)定位**
 
-      .box span {
-        /* 没加position: absolute时,父元素高度是由内容撑起的 */
-        position: absolute;
-        background-color: #0f0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">
-      <span>我是span元素</span>
-    </div>
-  </body>
-</html>
-```
+- 最近的祖先滚动容器的滚动视口的
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .box {
+          width: 500px;
+          height: 500px;
+          margin: 100px auto 0;
+          overflow: scroll;
+          background-color: #ccc;
+        }
+  
+        .nav {
+          background-color: #f00;
+          color: #fff;
+          position: sticky;
+          top: 0;
+        }
+  
+        ul {
+          padding: 0;
+          margin: 0;
+        }
+  
+        ul li {
+          list-style: none;
+          height: 100px;
+          line-height: 100px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box">
+        <h1>我是标题</h1>
+        <div class="nav">
+          <span>电脑</span>
+          <span>手机</span>
+          <span>衣服</span>
+          <span>鞋子</span>
+        </div>
+        <ul>
+          <li>电脑列表1</li>
+          <li>电脑列表2</li>
+          <li>电脑列表3</li>
+          <li>电脑列表4</li>
+          <li>电脑列表5</li>
+          <li>电脑列表6</li>
+          <li>电脑列表7</li>
+          <li>电脑列表8</li>
+          <li>电脑列表9</li>
+          <li>电脑列表10</li>
+        </ul>
+      </div>
+    </body>
+  </html>
+  ```
 
 
 
 ### z-index
 
-- z-index属性用来设置定位元素的**层叠顺序**（仅对定位元素有效）
-  - 取值可以是正整数、负整数、0 
+- z-index属性用来设置定位元素的<b>层叠顺序（仅对定位元素有效）</b>
+  - 取值可以是**正整数、负整数、0**
+  
 - 比较原则
   - 如果是**兄弟关系**
-    - z-index越大，层叠在越上面
-    - z-index相等，写在后面的那个元素层叠在上面
+    - z-index越大，**层叠在越上面**
+    - z-index相等，**写在后面的那个元素层叠在上面**
   - 如果**不是兄弟关系**
-    - 各自从元素自己以及祖先元素中，找出最邻近的2个定位元素进行比较
-    - 而且这2个定位元素必须有设置z-index的具体数值
-
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .children {
-      width: 200px;
-      height: 100px;
-      background-color: pink;
-      position: absolute;
-      z-index: 1;
-    }
-
-    .box {
-      width: 200px;
-      height: 100px;
-      background-color: blueviolet;
-      position: absolute;
-    }
-  </style>
-  <body>
-    <div class="parent">
-      <div class="children"></div>
-    </div>
-    <div class="box"></div>
-  </body>
-</html>
-```
+    - 各自从**元素自己**以及**祖先元素**中，找出**最近的2个定位元素**进行**比较**
+    - 而且**这2个定位元素必须有设置z-index的具体数值**
+  
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .children {
+          width: 200px;
+          height: 100px;
+          background-color: pink;
+          position: absolute;
+          z-index: 1;
+        }
+  
+        .box {
+          width: 200px;
+          height: 100px;
+          background-color: blueviolet;
+          position: absolute;
+   
+        }
+      </style>
+    </head>
+    <body>
+      <!--  body
+        parent   box
+        children
+        -->
+      <div class="parent">
+        <div class="children"></div>
+      </div>
+      <div class="box"></div>
+    </body>
+  </html>
+  ```
 
 
 
 ## 浮动
+
+- 换行符，浏览器给解析成像空格一样的东西了，所以才产生了缝隙
 
 ### 高度塌陷
 
@@ -2481,6 +2682,80 @@ div.box2 {
 ```
 
 ```html
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>less</title>
+    <style>
+      div.box1 {
+        width: 200px;
+        height: 100px;
+        background-color: deepskyblue;
+      }
+      div.box1 div.box11 {
+        width: 50px;
+        height: 50px;
+        background-color: deeppink;
+        transition: all 0.3s;
+      }
+      div.box1 div.box11:hover {
+        width: 100px;
+        height: 100px;
+      }
+      div.box2 {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+      div.box2 .box22 {
+        width: 50px;
+        height: 50px;
+        background-color: gold;
+      }
+      .p1,
+      .p2 {
+        width: 240px;
+        height: 240px;
+        background-color: gold;
+        border: red 2px solid;
+        margin-top: 20px;
+      }
+      .p2 {
+        background-color: rebeccapurple;
+      }
+      .content {
+        width: 48px;
+        border: 10px solid #ff0080;
+        margin-top: 20px;
+      }
+      .p3 {
+        width: 48px;
+        border: 10px solid #ff0080;
+        margin-top: 20px;
+      }
+      .mixins {
+        width: 500;
+        height: 500px;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <div class="box11"></div>
+    </div>
+    <div class="box2">
+      <div class="box22"></div>
+    </div>
+    <div class="p1"></div>
+    <div class="p2"></div>
+    <div class="p3"></div>
+  </body>
+</html>
+```
+
 <!DOCTYPE html>
 <html lang="zh">
   <head>
