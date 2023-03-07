@@ -4,14 +4,14 @@ base_info:
   title: 南 # 网站标题
   author: 南 # 作者名
   url: https://redefine.ohevan.com # 网站域名
-  # logo_img: '' # 作者名头像
+  logo_img: "" # 作者名头像
 
 style:
   primary_color: "#005080" # 网站主题色
 
-  avatar: "" # 设置作者头像，将显示在文章内容页
+  avatar: "/images/smile.png" # 设置作者头像，将显示在文章内容页
 
-  favicon: "" # 网页图标
+  favicon: "/images/smile.png" # 网页图标
 
   article_img_align: center # 设置文章内容页的图片排列位置
 
@@ -39,7 +39,7 @@ style:
       light: "#fff" # 为亮色模式的文字颜色
       dark: "#d1d1b6" # 为暗色模式的文字颜色
 
-    description: 勿在浮沙筑高 # 首屏标题
+    description: 勿在浮沙筑高台 # 首屏标题
 
     custom_font: # 自定义字体
       enable: false # 是否启用自定义字体
@@ -61,21 +61,9 @@ social_contact: # 设置第三方社交链接
     email: 1445683324@qq.com
 
 menu: # 网站头部导航菜单
-  # Home: 一级菜单栏名称
-  # path: / 网址，可以为相对路径或者绝对路径
-  # icon: fa-regular fa-house Fontawesome 图标名称（可选） https://fontawesome.com/
-
-  # Links: 一级菜单栏名称
-  #   submenus:
-  #       key: value 第一个链接
-
-  首页:
+  Home:
     path: /
     icon: fa-regular fa-house
-
-  # 笔记:
-  #   path: none
-  #   icon: fa-regular fa-archive
 
 home_article: # 设置首页文章块底部的日期格式，标签和分类信息显示
   date_format: YYYY-MM-DD HH:mm:ss
