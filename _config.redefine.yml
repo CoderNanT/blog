@@ -73,9 +73,9 @@ menu: # 网站头部导航菜单
     path: /
     icon: fa-regular fa-house
 
-  笔记:
-    path: none
-    icon: fa-regular fa-archive
+  # 笔记:
+  #   path: none
+  #   icon: fa-regular fa-archive
 
 home_article: # 设置首页文章块底部的日期格式，标签和分类信息显示
   date_format: YYYY-MM-DD HH:mm:ss
