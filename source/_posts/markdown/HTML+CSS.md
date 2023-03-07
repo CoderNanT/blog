@@ -1,7 +1,7 @@
 ---
   title: HTML+CSS
-  date: "2023-03-07 22:30:00"
-  updated: "2023-03-07 22:30:00"
+  date: "2023-03-07 23:55:00"
+  updated: "2023-03-07 23:55:00"
   tags: "HTML+CSS"
 ---
 
@@ -2682,80 +2682,6 @@ div.box2 {
 ```
 
 ```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>less</title>
-    <style>
-      div.box1 {
-        width: 200px;
-        height: 100px;
-        background-color: deepskyblue;
-      }
-      div.box1 div.box11 {
-        width: 50px;
-        height: 50px;
-        background-color: deeppink;
-        transition: all 0.3s;
-      }
-      div.box1 div.box11:hover {
-        width: 100px;
-        height: 100px;
-      }
-      div.box2 {
-        width: 100px;
-        height: 100px;
-        background-color: pink;
-      }
-      div.box2 .box22 {
-        width: 50px;
-        height: 50px;
-        background-color: gold;
-      }
-      .p1,
-      .p2 {
-        width: 240px;
-        height: 240px;
-        background-color: gold;
-        border: red 2px solid;
-        margin-top: 20px;
-      }
-      .p2 {
-        background-color: rebeccapurple;
-      }
-      .content {
-        width: 48px;
-        border: 10px solid #ff0080;
-        margin-top: 20px;
-      }
-      .p3 {
-        width: 48px;
-        border: 10px solid #ff0080;
-        margin-top: 20px;
-      }
-      .mixins {
-        width: 500;
-        height: 500px;
-        background-color: #000;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box1">
-      <div class="box11"></div>
-    </div>
-    <div class="box2">
-      <div class="box22"></div>
-    </div>
-    <div class="p1"></div>
-    <div class="p2"></div>
-    <div class="p3"></div>
-  </body>
-</html>
-```
-
 <!DOCTYPE html>
 <html lang="zh">
   <head>

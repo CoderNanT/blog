@@ -55,7 +55,6 @@ style:
 
 social_contact: # 设置第三方社交链接
   enable: true
-  # https://redefine-docs.ohevan.com/docs/configuration-guide/social_contact
   links:
     github: "https://github.com/codingiove"
     email: 1445683324@qq.com
@@ -116,48 +115,28 @@ website_count: # 设置网站计数，Redefine 主题内置不蒜子计数，无
     page_pv: true # 文章阅读次数（显示在文章内容页）
 
 local_search: # 设置网站搜索功能，非常实用，建议开启。开启后，头部导航栏右侧将出现搜索按钮
-  # npm install hexo-generator-searchdb
-  # https://redefine-docs.ohevan.com/docs/configuration-guide/local_search
   enable: true
   preload: true
 
 comment: # 开启和设置主题的评论系统
-  # https://redefine-docs.ohevan.com/docs/configuration-guide/comment
-  enable: false
-  use: waline # values: waline | gitalk | twikoo
+  enable: true
+  use: waline
 
-  # Waline
-  # See: https://waline.js.org/guide/get-started.html
   waline:
-    serverUrl: # Waline server url(vercel) example: https://example.example.com
-    lang: zh-CN # Waline language, default: zh-CN. See: https://waline.js.org/guide/client/i18n.html
-
-  # Gitalk
-  # See: https://github.com/gitalk/gitalk
-  gitalk:
-    github_id: # GitHub repo owner
-    repository: # Repository name to store issues
-    client_id: # GitHub Application Client ID
-    client_secret: # GitHub Application Client Secret
-
-  # Twikoo
-  # See: https://github.com/imaegoo/twikoo
-  twikoo:
-    visitor: true
-    env_id: # Vercel or Tencent Cloud Function environment ID
-    region: # environment region. If select Guangzhou, fill in "ap-guangzhou". (optional)
+    serverUrl: https://blog-comment-n5ba56lpk-codingiove.vercel.app
+    lang: zh-CN
 
 friend_links: # 用来设置友链页面中的列数
   columns: 2
 
-rss: # https://redefine-docs.ohevan.com/docs/configuration-guide/rss
+rss:
   enable: false
 
 lazyload: # 开启图片懒加载
   enable: true
 
-cdn: # CDN
-  enable: false
+cdn:
+  enable: true
 
 pjax: # PJAX 开启后，点击页面跳转时，网页顶部会出现彩色进度条
   enable: true
@@ -173,10 +152,10 @@ recommended_article: # 文章推荐，需要 npm install nodejieba
     - wiki/
 
 fontawesome:
-  thin: false # use fontawesome thin version or not
-  light: false # use fontawesome light version or not
-  duotone: false # use fontawesome duotone version or not
-  sharp_solid: false # use fontawesome sharp-solid version or not
+  thin: false
+  light: false
+  duotone: false
+  sharp_solid: false
 
 footer: # 设置网站底部的信息展示
   runtime: true # 是否显示网站运行时间
