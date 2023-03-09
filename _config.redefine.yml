@@ -1,7 +1,7 @@
 # 主题配置文件
 # https://redefine-docs.ohevan.com/docs/intro 文档
 base_info:
-  title: 南 # 网站标题
+  title: 南的博客 # 网站标题
   author: 南 # 作者名
   url: https://redefine.ohevan.com # 网站域名
   logo_img: "" # 作者名头像
@@ -64,8 +64,12 @@ menu: # 网站头部导航菜单
     path: /
     icon: fa-regular fa-house
 
+  Archives: 
+    path: /archives 
+    icon: fa-regular fa-archive 
+
 home_article: # 设置首页文章块底部的日期格式，标签和分类信息显示
-  date_format: YYYY-MM-DD HH:mm:ss
+  date_format: YYYY-MM-DD HH:mm
   category: # 文章分类
     enable: true
     limit: 8
@@ -180,14 +184,29 @@ plugins:
     enable: true
     audio:
       - name: Something Just Like This
-        artist: Coldplay
-        url: https://evan.beee.top/music/Something%20Just%20Like%20This%20-%20The%20Chainsmokers%E3%80%81Coldplay.mp3
-        cover: https://evan.beee.top/music/covers/Something_Just_Like_This.png
+        artist: The Chainsmokers，Coldplay
+        url: http://music.163.com/song/media/outer/url?id=461347998.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/69/15/1440780563.jpg
 
       - name: Diamonds
         artist: Rihanna
-        url: http://m701.music.126.net/20230307114007/e7dfa2e2adbff9172312f8dcc4ccc5b2/jdyyaac/0f58/065c/555b/824faa32761639c0286bb1438609e12a.m4a
-        cover: https://p1.music.126.net/0PZOF7P9ptROSxoDWSPKHw==/4445325511102051.jpg?param=66y66
+        url: http://music.163.com/song/media/outer/url?id=26515713.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/8/86/825676404.jpg
+
+      - name: 光辉岁月
+        artist: Beyond
+        url: http://music.163.com/song/media/outer/url?id=346576.mp3
+        cover: http://p1.music.126.net/JOJvZc_7SqQjKf8TktQ_bw==/29686813951246.jpg?param=60x60
+
+      - name: 灰色轨迹
+        artist: Beyond
+        url: http://music.163.com/song/media/outer/url?id=32701152.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/12/63/172615399.jpg
+
+      - name: 海阔天空
+        artist: Beyond
+        url: http://music.163.com/song/media/outer/url?id=1357375695.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/28/42/1776247091.jpg
 
 version: 1.1.6
 
