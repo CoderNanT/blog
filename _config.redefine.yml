@@ -193,6 +193,16 @@ plugins:
         url: http://music.163.com/song/media/outer/url?id=26515713.mp3
         cover: https://img4.kuwo.cn/star/albumcover/60/8/86/825676404.jpg
 
+      - name: Summertime Sadness (Radio Mix)
+        artist: Lana Del Rey
+        url: http://music.163.com/song/media/outer/url?id=3025201.mp3
+        cover: https://p1.music.126.net/ACQD5qHu1KPSJjLFuirwxQ==/109951166193744111.jpg?param=60x60
+
+      - name: Someone Like You
+        artist: Adele
+        url: http://music.163.com/song/media/outer/url?id=16435049.mp3
+        cover: https://p2.music.126.net/qngLhAe2u1869TK-BWnwEA==/109951167057108608.jpg?param=60x60
+
       - name: 光辉岁月
         artist: Beyond
         url: http://music.163.com/song/media/outer/url?id=346576.mp3
