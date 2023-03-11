@@ -3,7 +3,7 @@
 base_info:
   title: 南的博客 # 网站标题
   author: 南 # 作者名
-  url: https://redefine.ohevan.com # 网站域名
+  url: http://codernan.top # 网站域名
   logo_img: "" # 作者名头像
 
 style:

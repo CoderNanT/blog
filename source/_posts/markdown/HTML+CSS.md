@@ -1,7 +1,7 @@
 ---
   title: HTML+CSS
   date: "2023-03-07 10:00"
-  updated: "2023-03-09 17:49"
+  updated: "2023-03-11 17:08"
   tags: [HTML, CSS]
   categories: "系统课笔记"
 ---
@@ -195,6 +195,43 @@
 
 
 
+## meta元素
+
+- meta 元素定义的元数据的类型包括以下几种
+  - 如果设置了 **charset** 属性，meta 元素是一个字符集声明，告诉文档使用哪种字符编码
+  - 如果设置了 **http-equiv** 属性，meta 元素则是编译指令
+  - 如果设置了 **name** 属性，meta 元素提供的是文档级别（document-level）的元数据，应用于整个页面
+
+
+
+### http-equiv
+
+- 我们会发现，默认创建的HTML页面都有这段代码
+
+  ```html
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  ```
+
+- 它的作用到底是什么呢？网上众说纷纭，我们直接看官方文档的解释
+  - 告知IE浏览器去模仿哪一个浏览器的行为
+  - IE=edge，让 IE 以 edge 的模式来解析这个页面
+
+
+
+### name
+
+- name属性的值非常多，具体的内容可以查看文档
+  - https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta/name
+- 我们介绍几个常用的
+  - robots：爬虫、协作搜寻器，或者 “机器人”，对此页面的处理行为，或者说，应当遵守的规则
+  - author：文档作者的名字
+  - Copyright：版权声明
+  - description：一段简短而精确的、对页面内容的描述
+    - 一些浏览器，比如 Firefox 和 Opera，将其用作书签的默认描述
+  - keywords：与页面内容相关的关键词，使用逗号分隔。某些搜索引擎会进行收录
+
+
+
 ## body元素
 
 - body元素里面的内容将是你**在浏览器窗口中看到的东西**，也就是**网页的具体内容和结构**
@@ -302,7 +339,7 @@
 
 
 
-# 额外知识补充
+# 额外知识补充（一）
 
 ## 字符实体
 
@@ -1847,6 +1884,31 @@ box-sizing用来设置盒子模型中宽高的行为
 
 
 
+## CSS样式的字符编码
+
+- 之前我们有制定过HTML页面的编码，但是并没有制定CSS样式的编码
+
+  - 那么CSS样式的字符编码会按照什么规则来使用呢？
+
+- 在样式表中有多种方法去声明字符编码，浏览器会按照以下顺序尝试下边的方法（一旦找到就停止并得出结果）
+
+  - 文件的开头的 Unicode byte-order（字节顺序标记） 字符值
+    - https://en.wikipedia.org/wiki/Byte_order_mark
+  - 由Content-Type：HTTP header 中的 charset 属性给出的值或用于提供样式表的协议中的等效值
+
+  - CSS @ 规则 @charset
+  - 使用参考文档定义的字符编码： `<link>` 元素的 charset 属性
+    - 该方法在 HTML5 标准中已废除，无法使用
+  - 假设文档是 UTF-8
+
+- 开发中推荐在CSS的开头编写 @charset 指定编码
+
+  ```css
+  @charset "UTF-8"
+  ```
+
+
+
 ## CSS元素定位
 
 ### 标准流（Normal Flow）
@@ -3077,7 +3139,7 @@ box-sizing用来设置盒子模型中宽高的行为
 
 ## vertical-align
 
-- 官方文档的翻译：vertical-align会影响 **行内块级元素** 在一个 **行盒** 中垂直方向的位置
+- 官方文档的翻译：vertical-align会影响 **行内（块）级元素** 在一个 **行盒** 中垂直方向的位置
 
 
 
@@ -3212,282 +3274,735 @@ box-sizing用来设置盒子模型中宽高的行为
 
 
 
+## white-space
 
-## FC
-
-- FC的全称是Formatting Context(格式化上下文)，元素在标准流里面都是属于一个FC的
-
-- 块级元素的布局属于Block Formatting Context（块级格式化上下文）
-- 行内级元素的布局属于Inline Formatting Context（行内格式化上下文） 
-
-
-
-### BFC
-
-- MDN上有整理出在哪些具体的情况下会创建BFC： 
-  - 根元素（html） 
-  - 浮动元素（元素的 float 不是 none）
-  - 绝对定位元素（元素的 position 为 absolute 或 fixed） 
-  - 行内块元素（元素的 display 为 inline-block）
-  - overflow 计算值(Computed)不为 visible 的块元素
-  - 弹性元素（display 为 flex 或 inline-flex 元素的直接子元素）
-  - 网格元素（display 为 grid 或 inline-grid 元素的直接子元素）
-
-- BFC有什么作用呢
-  - 在BFC中，盒子会在**垂直方向上一个挨着一个**的排布
-  - **垂直方向的间距由margin属性**决定
-  - 在同一个BFC中，**相邻的两个盒子之间的margin会折叠**
-  - 在BFC中，每个元素的**左边缘是紧挨着包含块的左边缘**的；
-
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BFC-解决折叠</title>
-    <style>
-      .container {
-        overflow: auto;
-      }
-
-      .box1 {
-        width: 400px;
-        height: 100px;
-        background-color: orange;
-
-        margin-bottom: 100px;
-      }
-
-      .box2 {
-        height: 100px;
-        background-color: purple;
-
-        margin-top: 100px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box1"></div>
-    <div class="box2"></div>
-
-    <div class="container">
-      <div class="box1"></div>
-    </div>
-    <div class="box2"></div>
-  </body>
-</html>
-```
+- white-space用于设置空白处理和换行规则
+  - normal：合并所有连续的空白，**允许**单词超屏时自动换行
+  - nowrap：合并所有连续的空白，**不允许**单词超屏时自动换行
+  - pre：**阻止**合并所有连续的空白，**不允许**单词超屏时自动换行
+  - pre-wrap：**阻止**合并所有连续的空白，**允许**单词超屏时自动换行
+  - pre-line：合并所有连续的空白（但保留换行），**允许**单词超屏时自动换行
 
 
 
-### 解决浮动高度塌陷
+## text-overflow
 
-- BFC解决高度塌陷需要满足两个条件
-  - 浮动元素的父元素触发BFC，形成独立的块级格式化上下文
-  - 浮动元素的父元素的高度是auto的
-- BFC的高度是auto的情况下，是如下方法计算高度的
-  - 如果只有inline-level，是行高的顶部和底部的距离
-  - 如果有block-level，是由最底层盒子的上边缘和下边缘之间的距离
-  - 如果有绝对定位元素，将被忽略
-  - **如果有浮动元素，那么会增加高度以包含这些浮动元素的下边缘**
+- text-overflow通常用来设置文字溢出时的行为
+  - clip：溢出的内容直接裁剪掉（字符可能会显示不完整）
+  - ellipsis：溢出那行的结尾处用省略号表示
+- text-overflow生效的前提是overflow不为visible
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BFC-解决浮动高度塌陷</title>
-    <style>
-      .container {
-        background-color: orange;
-          
-        overflow: auto;
-      }
-
-      .item {
-        width: 600px;
-        height: 200px;
-    	float: left;
-        border: 1px solid #000;
-        background-color: pink;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-    </div>
-  </body>
-</html>
-```
+- 常见的是将 white-space、text-overflow、overflow 一起使用
 
 
 
 ## 浏览器前缀
 
-- 为什么需要浏览器前缀了
-  - CSS属性刚开始**并没有成为标准**，浏览器为了**防止后续会修改名字给新的属性添加了浏览器前缀**
+- 有时候可能会看到有些CSS属性名前面带有：**-o-、-xv-、-ms-、mso-、-moz-、-webkit-**
+- 官方文档专业术语叫做：vendor-specific extensions（供应商特定扩展）
+
+- 为什么需要浏览器前缀了？
+  - CSS属性刚开始**并没有成为标准**，浏览器为了**防止后续会修改/删除名字给新的属性添加了浏览器前缀**
+
+- 上述前缀叫做浏览器私有前缀，只有对应的浏览器才能解析使用
+  - -o-、-xv-：Opera等
+  - -ms-、mso-：IE等
+  - -moz-：Firefox等
+  - -webkit-：Safari、Chrome等
+- 注意：不需要手动添加，学习了模块化打包工具会自动添加浏览器前缀
 
 
 
-# Less
+## FC
 
-```less
-// less中的变量
-// @import "" 引入其他样式进来
-@Vsariable: 200px; // 定义 200 数值
-@color: pink; // 定义颜色
-@class: box22; // 定义一个类名
+- 什么是FC呢？
+  - FC的全称是Formatting Context（格式化上下文），元素在标准流里面都是属于一个FC的
+  - https://www.w3.org/TR/CSS21/visuren.html#normal-flow
 
-div.box1 {
-  width: @Vsariable;
-  height: 100px;
-  background-color: deepskyblue;
+- 块级元素的布局属于Block Formatting Context（BFC）
+  - 也就是**block level box**都是在**BFC**中布局的
 
-  div.box11 {
-    width: 50px;
-    height: 50px;
-    background-color: deeppink;
-    transition: all 0.3s;
+- 行内级元素的布局属于Inline Formatting Context（IFC） 
+  - 也就是**inline level box**都是在**IFC**中布局的
 
-    // & 表示外层父元素,也就是 div.box11
-    &:hover {
+
+
+
+### BFC
+
+- block level box都是在BFC中布局的，那么这个BFC在哪里呢？
+  - https://www.w3.org/TR/CSS21/visuren.html#block-formatting
+
+- MDN上有整理出在哪些具体的情况下会创建BFC 
+  - 根元素（html） 
+  - 浮动元素（元素的 float 不是 none）
+  - 绝对定位元素（元素的 position 为 absolute 或 fixed） 
+  - 行内块元素（元素的 display 为 inline-block）
+  - 表格单元格（元素的 display 为 table-cell，HTML表格单元格默认为该值），表格标题（元素的 display 为 table-caption，HTML表格标题默认为该值）
+  - 匿名表格单元格元素（元素的 display 为 table、table-row、 table-row-group、table-header-group、table-footer-group（分别是HTML table、row、tbody、thead、tfoot 的默认属性）或 inline-table）
+  - overflow 值不为 visible 的块元素
+  - 弹性元素（display 为 flex 或 inline-flex 元素的直接子元素）
+  - 网格元素（display 为 grid 或 inline-grid 元素的直接子元素）
+  - display 值为 flow-root 的元素
+
+
+
+#### BFC有什么作用呢
+
+- 简单概况如下
+
+  - 在BFC中，盒子会在**垂直方向上一个挨着一个**的排布
+
+  - **垂直方向的间距由margin属性**决定
+
+  - 在同一个BFC中，**相邻的两个盒子之间的margin会折叠**
+
+  - 在BFC中，每个元素的**左边缘是紧挨着包含块的左边缘**的
+
+- 那么这个东西有什么用呢？
+
+  - 解决margin的折叠问题
+  - 解决浮动高度塌陷问题
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <title>BFC-解决折叠</title>
+      <style>
+        .container {
+          overflow: auto;
+        }
+  
+        .box1 {
+          width: 400px;
+          height: 100px;
+          background-color: orange;
+  
+          margin-bottom: 50px;
+        }
+  
+        .box2 {
+          height: 100px;
+          background-color: purple;
+  
+          margin-top: 100px;
+        }
+      </style>
+    </head>
+    <body>
+      <!-- 让 container box 触发BFC -->
+      <div class="container">
+        <div class="box1"></div>
+      </div>
+      <div class="box2"></div>
+    </body>
+  </html>
+  ```
+
+
+
+#### 解决浮动高度塌陷
+
+- 事实上，BFC解决高度塌陷需要满足两个条件
+  - 浮动元素的父元素触发BFC，形成独立的块级格式化上下文（Block Formatting Context）
+  - 浮动元素的父元素的高度是auto的
+- BFC的高度是auto的情况下，是如下方法计算高度的
+  - 如果只有inline-level，是行高的顶部和底部的距离
+  - 如果有block-level，是由最底层的块上边缘和最底层块盒子的下边缘之间的距离
+  - 如果有绝对定位元素，将被忽略
+  - **如果有浮动元素，那么会增加高度以包裹这些浮动元素的下边缘**
+
+  - https://www.w3.org/TR/CSS21/visudet.html#root-height
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <title>BFC-解决浮动高度塌陷</title>
+      <style>
+        .container {
+          background-color: orange;
+          overflow: auto;
+        }
+  
+        .item {
+          width: 600px;
+          height: 200px;
+          float: left;
+          border: 1px solid #000;
+          background-color: pink;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </body>
+  </html>
+  ```
+
+
+
+## 媒体查询
+
+- 媒体查询是一种提供给**开发者**针对**不同设备需**求进行**定制化开发**的一个接口
+- 你可以根据**设备的类型**（比如屏幕设备、打印机设备）或者**特定的特性**（比如屏幕的宽度）来修改你的页面
+
+- 媒体查询的使用方式主要有三种
+
+  - 方式一：通过<b>@media和@import</b>使用不同的CSS规则（常用）
+
+  ```html
+  <style>
+    @import url(./css/body_bgc.css) (max-width: 800px);
+  </style>
+  ```
+
+  - 方式二：使用media属性为`<style>, <link>, <source>`和其他HTML元素指定特定的媒体类型
+
+  ```html
+  <link rel="stylesheet" media="screen and (max-width: 800px)" href="./css/body_bgc.css">
+  ```
+
+  - 方式三：使用 Window.matchMedia() 和 MediaQueryList.addListener() 方法来测试和监控媒体状态
+
+- 比较常用的是通过@media来使用不同的CSS规则，目前掌握这个即可
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        /* 
+        @media (min-width: 320px) and (max-width: 375px) {
+        .box { font-size: 15px; }
+        }
+  
+        @media (min-width: 375px) and (max-width: 414px) {
+          .box { font-size: 18px; }
+        }
+  
+        @media (min-width: 414px) and (max-width: 480px) {
+          .box { font-size: 21px; }
+        }
+  
+        @media (min-width: 480px) {
+          .box { font-size: 24px; }
+        } 
+        */
+  
+        /* CSS层叠性 */
+        @media (min-width: 320px) {
+          .box {
+            font-size: 15px;
+          }
+        }
+        @media (min-width: 375px) {
+          .box {
+            font-size: 18px;
+          }
+        }
+        @media (min-width: 414px) {
+          .box {
+            font-size: 21px;
+          }
+        }
+        @media (min-width: 480px) {
+          .box {
+            font-size: 24px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box">我是box</div>
+    </body>
+  </html>
+  ```
+
+
+
+### 媒体类型
+
+- 在使用媒体查询时，你必须指定要使用的媒体类型
+  - 媒体类型是可选的，并且会（隐式地）应用 all 类型
+- 常见的媒体类型值如下
+  - all：适用于所有设备
+  - print：适用于在打印预览模式下在屏幕上查看的分页材料和文档
+  - screen（掌握）：主要用于屏幕
+  - speech：主要用于语音合成器
+
+
+
+### 媒体特性
+
+- 媒体特性（Media features）描述了 浏览器、输出设备，或是预览环境的具体特征
+
+  - 通常会将媒体特性描述为一个表达式
+  - 每条媒体特性表达式都必须用括号括起来
+
+  | 特征                        | 价值                        | 最小/最大 | 描述               |
+  | --------------------------- | --------------------------- | --------- | ------------------ |
+  | 宽度width                   | 长度                        | 是的      | 渲染表面的宽度     |
+  | 高度height                  | 长度                        | 是的      | 渲染表面的高度     |
+  | 颜色color                   | 整数                        | 是的      | 每个颜色分量的位数 |
+  | 设备比例device-aspect-ratio | 整数/整数                   | 是的      | 长宽比             |
+  | 设备高度device-width        | 长度                        | 是的      | 输出设备的高度     |
+  | 设备宽度device-height       | 长度                        | 是的      | 输出设备的宽度     |
+  | 方向orientation             | portrait 或 landscape       | 不        | 屏幕方向           |
+  | 分辨率resolution            | 分辨率（dpi，dpcm 或 dppx） | 是的      | 解析度             |
+
+
+
+### 逻辑操作符
+
+- 媒体查询的表达式最终会获得一个Boolean值，也就是真（true）或者假（false）
+  - 如果结果为真（true），那么就会生效
+  - 如果结果为假（false），那么就不会生效
+- 如果有多个条件，我们可以通过逻辑操作符联合复杂的媒体查询
+  - <b>and：</b>and 操作符用于将多个媒体查询规则组合成单条媒体查询
+  - not：not运算符用于否定媒体查询，如果不满足这个条件则返回true，否则返回false
+  - only：only运算符仅在整个查询匹配时才用于应用样式
+  - , (逗号)：逗号用于将多个媒体查询合并为一个规则
+
+
+
+### 常见的移动端设备
+
+- 我们以iPhone为例
+
+  | 手机机型          | 屏幕尺寸 | 逻辑分辨率 | 设备分辨率 | 缩放因子 |
+  | ----------------- | -------- | ---------- | ---------- | -------- |
+  | 3G(s)             | 3.5      | 320x480    | 320x480    | @1x      |
+  | 4(s)              | 3.5      | 320x480    | 640x960    | @2x      |
+  | 5(s/se)           | 4        | 320x568    | 640x1136   | @2x      |
+  | 6(s)/7/8          | 4.7      | 375x667    | 750x1334   | @2x      |
+  | X/Xs /11 Pro      | 5.8      | 375x812    | 1125x2436  | @3x      |
+  | 6(s)/7/8 Plus     | 5.5      | 414x736    | 1242x2208  | @3x      |
+  | Xr/11             | 6.1      | 414x896    | 828×1792   | @2x      |
+  | Xs Max/11 Pro Max | 6.5      | 414x896    | 1242×2688  | @3x      |
+
+
+
+# 额外知识补充（二）
+
+## CSS中的单位
+
+- 我们经常会使用px来表示一个长度（大小），比如font-size设置为18px，width设置为100px
+- px是一个长度（length）单位，事实上CSS中还有非常多的长度单位
+- 整体可以分成两类
+  - **绝对长度单位**（Absolute length units）
+  - **相对长度单位**（Relative length units）
+
+
+
+### CSS中的绝对单位
+
+- 绝对单位
+
+  - 它们**与其他任何东西都没有关系**，通常**被认为总是相同的大小**
+  - 这些值中的大多数在**用于打印时**比用于屏幕输出时更有用，例如，我们通常不会在屏幕上使用cm
+
+  - 唯一一个您经常使用的值，就是**px（像素）**
+
+
+
+### CSS中的相对单位
+
+- 相对单位
+
+  - 相对长度单位**相对于其他一些东西**
+  - 比如**父元素的字体大小**，或者**视图端口的大小**
+  - 使用相对单位的好处是，经过一些**仔细的规划**，您可以**使文本或其他元素的大小与页面上的其他内容**相对应
+
+- em：相对自己的字体大小属性的**计算值**
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="zh">
+    <head>
+      <style>
+        .container {
+          font-size: 15px;
+        }
+  
+        .box {
+          /* 1.em: 相对自己的font-size */
+          /* 2.如果自己没有设置, 那么会继承父元素的font-size */
+          /* 3.如果font-size中有写em单位, 可以理解成相对于父元素
+             	 但是更准确的理解依然是相对于自己的
+          */
+          font-size: 2em; /* 先继承父元素的font-size: 15px * 2em = 30px */
+  
+          width: 10em;
+          height: 5em;
+          background-color: orange;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="box">我是box</div>
+      </div>
+    </body>
+  </html>
+  ```
+
+- rem：相对根元素的字体大小
+
+- vw/vh：视口宽度的1%，视口高度的1%
+
+
+
+## pixel
+
+- 前面我们已经一直在使用px单位了，px是pixel单词的缩写，翻译为像素
+- 那么像素到底是什么呢？
+  - **像素是影响显示的基本单位**。（比如屏幕上看到的画面、一幅图片）
+  - pix是英语单词**picture**的常用简写，加上英语单词  “元素”  **element**，就得到pixel
+  - “像素”  表示  “画像元素”  之意，有时亦被称为**pel（picture element）**
+
+
+
+### 像素的不同分类
+
+- 但是这个100个pixel到底是多少呢？
+
+  - 我们确实可以在屏幕上看到一个大小，但是这个大小代表的真实含义是什么呢？
+  - 我们经常说一个电脑的分辨率、手机的分辨率，这个和CSS当中的像素又是什么关系呢？
+
+  ```css
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+  ```
+
+- 这里我们要深入到不同的像素概念中，来理解CSS中的pixel到底代表什么含义
+
+- 像素单位常见的有三种像素名称
+
+  - **设备像素**（也称之为物理像素）
+  - **设备独立像素**（也称之为逻辑像素）
+  - **CSS像素**
+
+
+
+### 物理像素和逻辑像素
+
+- **设备像素**，也叫**物理像素**
+  - 设备像素指的是**显示器上的真实像素，每个像素的大小是屏幕固有的属性，屏幕出厂以后就不会改变**了
+  - 我们在购买**显示器或者手机的时候**，提到的**设备分辨率就是设备像素的大小**
+  - 比如**iPhone X的分辨率 1125x2436，指的就是设备像素**
+- **设备独立像素**，也叫**逻辑像素**
+  - 如果**面向开发者**我们使用**设备像素显示一个100px的宽度**，那么在**不同屏幕上显示效果会是不同**的
+  - 开发者**针对不同的屏幕**很难进行较好的适配，编写程序必须**了解用户的分辨率**来进行开发
+  - 所以在设备像素之上，**操作系统为开发者进行抽象，提供了逻辑像素的概念**
+  - 比如你购买了一台显示器，在**操作系统上是以1920x1080设置的显示分辨率**，那么无论你购买的是**2k、4k的显示器**，对于开发者来说，都是1920x1080的大小
+- CSS像素
+  - CSS中我们经常**使用的单位也是pixel**，它在**默认情况下等同于设备独立像素**（也就是逻辑像素）
+  - 毕竟逻辑像素才是面向我们开发者的
+- 我们可以通过JavaScript中的**screen.width和screen.height**获取到电脑的逻辑分辨率
+
+
+
+### DPR、PPI
+
+- DPR：device pixel ratio
+  - 2010年，iPhone4问世，不仅仅带来了**移动互联网**，还带来了**Retina屏幕**
+  - Retina屏幕翻译为**视网膜显示屏**，可以为用户带来**更好的显示**
+  - 在Retina屏幕中，**一个逻辑像素在长度**上对应**两个物理像素**，这个比例称之为**设备像素比**（device pixel ratio）
+  - 我们可以通过**window.devicePixelRatio**获取到当前屏幕上的DPR值
+    - DPR计算公式：物理像素 / 操作系统设置的逻辑像素 = DPR
+    - DPR = 3 
+    - 1个逻辑像素 * DPR = 3个物理像素
+
+- PPI：每英寸像素（英语：Pixels Per Inch，缩写：PPI）
+  - 通常用来表示一个打印图像或者显示器上像素的密度
+  - 1英寸=2.54厘米，在工业领域被广泛应用
+
+
+
+## CSS编写的痛点
+
+- CSS作为一种**样式语言**，本身用来**给HTML元素添加样式**是没有问题的
+- 但是目前前端项目已经越来越复杂，不再是简简单单的几行CSS就可以搞定的，我们需要几千行甚至上万行的CSS来完成页面的美化工作
+- 随着代码量的增加，必然会造成很多的编写不便
+  - 比如大量的重复代码，虽然可以用**类来勉强管理和抽取**，但是**使用起来依然不方便**
+  - 比如**无法定义变量（当然目前已经支持）**，如果一个值被修改，那么需要**修改大量代码，可维护性很差** (比如主题颜色)
+  - 比如**没有专门的作用域和嵌套**，需要**定义大量的id/class来保证选择器的准确性**，避免样式混淆
+- 所以有一种对CSS称呼是 **“面向命名编程”**
+
+- 社区为了解决CSS面临的大量问题，出现了一系列的**CSS预处理器**(CSS_preprocessor)
+  - CSS 预处理器是一个能让你通过**预处理器自己独有的语法**来生成CSS的程序
+  - 市面上有很多**CSS预处理器可供选择**，且绝大多数CSS预处理器会**增加一些原生CSS不具备的特性**
+  - 代码最终**会转化为CSS来运行**，因为**对于浏览器来说只识别CSS**
+
+
+
+## 常见的CSS预处理器
+
+- 常见的预处理器有哪些呢？目前使用较多的是三种预处理器
+- Sass/Scss
+  - 2007年诞生，最早也是最成熟的CSS预处理器，拥有ruby社区的支持，是属于Haml（一种模板系统）的一部分
+  - 目前受LESS影响，已经进化到了**全面兼容CSS的SCSS**
+- Less
+  - 2009年出现，受SASS的影响较大，但又**使用CSS的语法**，让大部分**开发者更容易上手**
+  - 比起SASS来，可编程功能不够，不过优点是使用方式简单、便捷，兼容CSS，并且已经足够使用
+  - 另外反过来也影响了SASS演变到了SCSS的时代
+  - 著名的Twitter Bootstrap就是采用LESS做底层语言的，也包括React的UI框架AntDesign
+- Stylus
+  - 2010年产生，来自Node.js社区，主要用来给Node项目进行CSS预处理支持
+  - 语法偏向于Python，使用率相对于Sass/Less少很多
+
+
+
+## Less
+
+- 什么是Less呢？我们来看一下官方的介绍
+  - It's CSS, with just a little more
+- Less （Leaner Style Sheets 的缩写） 是一门CSS 扩展语言，并且兼容CSS
+  - Less增加了很多**相比于CSS更好用的特性**
+  - 比如**定义变量、混入、嵌套、计算**等等
+  - **Less最终需要被编译成CSS运行于浏览器**中（包括部署到服务器中）
+
+
+
+### 变量
+
+- 在一个大型的网页项目中，我们CSS使用到的某几种属性值往往是特定的
+
+  - 比如我们使用到的主题颜色值，那么每次编写类似于 **#f3c258** 格式的语法
+
+  - 一方面是记忆不太方便，需要重新编写或者拷贝样式
+
+  - 另一方面如果有一天主题颜色改变，我们需要修改大量的代码
+
+  - 所以，我们可以将常见的颜色或者字体等定义为变量来使用
+
+- 在Less中使用如下的格式来定义变量
+
+  - **@变量名: 变量值**
+
+  ```less
+  @mainColor: #a40011;
+  @normalFontSize: 14px;
+  
+  .box {
+  	color: @mainColor;
+  	font-size: @normalFontSize;
+  }
+  ```
+
+
+
+### 运算
+
+- 在Less中，算术运算符 +、-、*、/ 可以对任何数字、颜色或变量进行运算
+
+  - 算术运算符在加、减或比较之前会进行单位换算，计算的结果**以最左侧操作数的单位类型**为准
+  - 如果**单位换算无效或失去意义，则忽略单位**
+
+  ```less
+  .box {
+  	color: 100px + 10%;
+  	background-color: #ff0000 + #00ff00;
+  }
+  ```
+
+
+
+### 混入、映射、继承
+
+- 在原来的CSS编写过程中，多个选择器中可能会有大量相同的代码
+
+  - 我们希望可以将这些**代码进行抽取到一个独立的地方，任何选择器都可以进行复用**
+  - 在less中提供了 **混入（Mixins）** 来帮助我们完成这样的操作
+
+- 混合（Mixin）是一种将一组属性从一个规则集（或混入）到另一个规则集的方法
+
+  ```less
+  .nowrap_ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .box {
+    width: 150px;
+    .nowrap_ellipsis();
+  }
+  ```
+
+- 注意：混入在没有参数的情况下，**小括号可以省略，但是不建议这样使用**
+
+- 混入也可以传入变量
+
+  ```less
+  .box_border(@borderWidth: 1px, @borderColor: purple) {
+    border: @borderWidth solid @borderColor;
+  }
+  
+  .box {
+    width: 150px;
+    .box_border(5px, orange);
+  }
+  ```
+
+- 映射（Maps）
+
+  ```less
+  .box_size {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box {
+    width: .box_size()[width];
+  }
+  ```
+
+- 继承（extend）
+
+  - 和mixins作用类似，用于**复用代码**
+  - 和mixins相比，继承代码最终会转化成**并集选择器**
+
+  ```less
+  .box_size {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box:extend(.box_border) {
+     background-color: pink;
+  }
+  
+  /*
+    .box_size, .box {
       width: 100px;
       height: 100px;
     }
+  */
+  ```
+
+
+
+### 作用域
+
+- 在查找一个变量时，首先在**本地查找变量和混合（mixins）**
+
+- 如果**找不到，则从  “父”  级作用域继承**
+
+  ```less
+  @mainColor: #f00;
+  .box_mixin {
+    @mainColor: orange;
   }
-}
-
-div.box2 {
-  width: 100px;
-  height: 100px;
-  background-color: @color;
-
-  .@{class} {
-    width: 50px;
-    height: 50px;
-    background-color: gold;
+  
+  .box {
+  	// @mainColor: #0f0;
+    .item {
+  		color: @mainColor;
+  		.box_mixin();
+    	// @mainColor: #00f;
+    }
   }
-}
+  ```
 
-.p1 {
-  width: 240px;
-  height: 240px;
-  background-color: gold;
-  border: red 2px solid;
-  margin-top: 20px;
-}
 
-// .p2:extend(.p1) ---> .p1, .p2
-.p2:extend(.p1) {
-  background-color: rebeccapurple;
-}
 
-// 这个类专门给别人用,也不会被编写到 css 里
-// 如果不加 () 会编写到 css 里
-.content {
-  width: 240 / 5px; // 可以进行加减乘除
-  border: 10px solid rgb(255, 0, 128);
-  margin-top: 20px;
-}
+## 什么是移动端适配？
 
-.p3 {
-  .content;
-}
+- 移动互联网的快速发展，让人们已经越来越习惯于使用手机来完成大部分日常的事务
+  - 前面我们已经学习了大量HTML、CSS的前端开发知识
+  - 这些知识也同样**适用于移动端开发**，但是如果想让一个页面**真正适配于移动端，我们最好多了解一些移动端的知识**
+- 移动端开发目前主要包括三类
+  - **原生App开发**（iOS、Android、RN、uniapp、Flutter等）
+  - **小程序开发**（原生小程序、uniapp、Taro等）
+  - **Web页面**（移动端的Web页面，可以使用浏览器或者webview浏览）
 
-// 在混合函数中可以设置变量,也可以设置默认参数
-.test(@width: 100px, @height: 100px, @bg-color: #bfc) {
-  width: @width;
-  height: @height;
-  background-color: @bg-color;
-}
+-  因为目前移动端设备较多，所以我们需要对其进行一些适配
+- 这里有两个概念
+  - **自适应：**根据不同的设备屏幕大小来**自动调整尺寸、大小**
+  - **响应式：**会**随着屏幕的实时变动而自动调整，是一种自适应**
 
-.mixins {
-  // 按顺序传递参数
-  // .test(200px,200px,#bfc)
-  // 指定参数
-  .test(@bg-color:#000 , @height:500px , @width:500);
-}
-```
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>less</title>
-    <style>
-      div.box1 {
-        width: 200px;
-        height: 100px;
-        background-color: deepskyblue;
-      }
-      div.box1 div.box11 {
-        width: 50px;
-        height: 50px;
-        background-color: deeppink;
-        transition: all 0.3s;
-      }
-      div.box1 div.box11:hover {
-        width: 100px;
-        height: 100px;
-      }
-      div.box2 {
-        width: 100px;
-        height: 100px;
-        background-color: pink;
-      }
-      div.box2 .box22 {
-        width: 50px;
-        height: 50px;
-        background-color: gold;
-      }
-      .p1,
-      .p2 {
-        width: 240px;
-        height: 240px;
-        background-color: gold;
-        border: red 2px solid;
-        margin-top: 20px;
-      }
-      .p2 {
-        background-color: rebeccapurple;
-      }
-      .content {
-        width: 48px;
-        border: 10px solid #ff0080;
-        margin-top: 20px;
-      }
-      .p3 {
-        width: 48px;
-        border: 10px solid #ff0080;
-        margin-top: 20px;
-      }
-      .mixins {
-        width: 500;
-        height: 500px;
-        background-color: #000;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box1">
-      <div class="box11"></div>
-    </div>
-    <div class="box2">
-      <div class="box22"></div>
-    </div>
-    <div class="p1"></div>
-    <div class="p2"></div>
-    <div class="p3"></div>
-  </body>
-</html>
-```
+
+## 认识视口viewport
+
+- 在前面我们已经简单了解过视口的概念了
+  - 在一个浏览器中，我们可以**看到的区域就是视口（viewport）**
+  - 我们说过**fixed就是相对于视口来进行定位**的
+  - 在**PC端的页面**中，我们是**不需要对视口进行区分**，因为我们的**布局视口和视觉视口**是同一个
+- 但是在移动端，不太一样，你布局的视口和你可见的视口是不太一样的
+  - 这是因为**移动端的网页窗口往往比较小**，我们可能会**希望一个大的网页在移动端可以完整的显示**
+  - 所以在默认情况下，**移动端**的**布局视口**是**大于视觉视口**的
+- 所以在移动端，我们可以将视口划分为三种情况
+  - **布局视口**（layout viewport）
+  - **视觉视口**（visual layout）
+  - **理想视口**（ideal layout）
+- 这些概念的区分，事实上来自ppk，他也是对前端贡献比较大的一个人（特别是在移动端浏览器）
+  - https://www.quirksmode.org/mobile/viewports2.html
+
+
+
+### 布局视口和视觉视口
+
+- 布局视口（layout viewport）
+
+  - 默认情况下，一个在PC端的网页在移动端会如何显示呢？
+    - 第一，它会**按照宽度为980px来布局一个页面的盒子和内容**
+    - 第二，为了**显示可以完整的显示在页面中，对整个页面进行缩小**
+  - 我们相对于980px布局的这个视口，称之为**布局视口（layout viewport）**
+    - 布局视口的默认宽度是**980px**
+
+  <img src="https://www.quirksmode.org/mobile/pix/viewport/mobile_layoutviewport.jpg" />
+
+- 视觉视口（visual viewport）
+
+  - 如果默认情况下，我们按照980px显示内容，那么**右侧有一部分区域就会无法显示**，所以**手机端浏览器会默认对页面进行缩放以显示到用户的可见区域**中
+  - 那么**显示在可见区域的这个视口**，就是**视觉视口（visual viewport）**
+
+  <img src="https://www.quirksmode.org/mobile/pix/viewport/mobile_visualviewport.jpg" />
+
+- 在Chrome上按shift+鼠标左键可以进行缩放
+
+
+
+### 理想视口
+
+- 如果所有的网页都按照980px在移动端布局，那么最终页面都会被缩放显示
+
+  - 事实上这种方式是**不利于我们进行移动的开发**的，我们希望的是**设置100px，那么显示的就是100px**
+  - 如何做到这一点呢？通过设置**理想视口（ideal viewport）**
+
+- 理想视口（ideal viewport）
+
+  - 默认情况下的**layout viewport并不适合我们进行布局**
+  - 我们可以对**layout viewport进行宽度和缩放的设置**，以满足**正常在一个移动端窗口的布局**
+  - 这个时候可以设置**meta中的viewport**
+
+  ```html
+  <!-- width: 设置布局视口的宽度 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  ```
+
+
+  | 值            | 可能的附加值                         | **描述**                                                     |
+  | ------------- | ------------------------------------ | ------------------------------------------------------------ |
+  | width         | 一个正整数，或者字符串 device-width  | 定义 viewport 的宽度                                         |
+  | height        | 一个正整数，或者字符串 device-height | 定义 viewport 的高度。未被任何浏览器使用                     |
+  | initial-scale | 一个 0.0 和 10.0 之间的正数          | 定义设备宽度与 viewport 大小之间的缩放比例                   |
+  | maximum-scale | 一个 0.0 和 10.0 之间的正数          | 定义缩放的最大值，必须大于等于 minimum-scale，否则表现将不可预测 |
+  | minimum-scale | 一个 0.0 和 10.0 之间的正数          | 定义缩放的最小值，必须小于等于 maximum-scale，否则表现将不可预测 |
+  | user-scalable | yes 或者 no                          | 默认为 yes，如果设置为 no，将无法缩放当前页面。浏览器可以忽略此规则 |
+
+  <img src="https://www.quirksmode.org/mobile/pix/viewport/mobile_viewportzoomedout.jpg" />
+
+
+
