@@ -127,7 +127,7 @@ comment: # 开启和设置主题的评论系统
   use: waline
 
   waline:
-    serverUrl: https://blog-comment-n5ba56lpk-codingiove.vercel.app
+    serverUrl: https://blog-comment-two-kappa.vercel.app
     lang: zh-CN
 
 friend_links: # 用来设置友链页面中的列数

@@ -3992,7 +3992,6 @@ box-sizing用来设置盒子模型中宽高的行为
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   ```
 
-
   | 值            | 可能的附加值                         | **描述**                                                     |
   | ------------- | ------------------------------------ | ------------------------------------------------------------ |
   | width         | 一个正整数，或者字符串 device-width  | 定义 viewport 的宽度                                         |
