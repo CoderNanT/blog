@@ -63,12 +63,16 @@ home_banner:
   title: 勿在浮沙筑高台
 
   subtitle:
-    text: []
+    text: [
+        当一切看起来都不起作用的时候，我就会像个石匠一样去敲打石头。
+        可能敲100次，石头不会有任何反应。
+        但是101次，石头可能就会裂为两半，我知道并不是第101次起了作用，而是前面积累所致
+      ]
     typing_speed: 100
     backing_speed: 80
     starting_delay: 500
     backing_delay: 1500
-    loop: true
+    loop: false
     smart_backspace: true
 
   text_color:
@@ -177,7 +181,7 @@ comment:
   system: waline
   config:
     waline:
-      serverUrl: https://blog-comment-two-kappa.vercel.app
+      serverUrl: https://waline-codingiove.vercel.app
 
     # gitalk:
     #   clientID:
@@ -223,7 +227,7 @@ plugins:
 
       - name: Something Just Like This
         artist: The Chainsmokers，Coldplay
-        url: http://music.163.com/song/media/outer/url?id=461347998.mp3
+        url: https://evan.beee.top/music/Something%20Just%20Like%20This%20-%20The%20Chainsmokers%E3%80%81Coldplay.mp3
         cover: https://img4.kuwo.cn/star/albumcover/60/69/15/1440780563.jpg
 
       - name: Diamonds
