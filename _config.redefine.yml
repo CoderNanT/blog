@@ -1,0 +1,269 @@
+info:
+  title: 南的博客 # 网站标题
+  author: 南 # 作者名
+  url: http://codernan.top # 网站域名
+
+defaults:
+  favicon: "/images/smile.png" # 网页图标
+  logo:
+  avatar: "/images/smile.png" # 设置作者头像，将显示在文章内容页
+
+colors:
+  primary: "#005080" # 网站主题色
+  secondary:
+
+# open_graph:
+#   enable: false
+#   image:
+#   description:
+
+global:
+  fonts:
+    chinese:
+      enable: false
+      family:
+      url:
+
+    english:
+      enable: false
+      family:
+      url:
+
+  content_max_width: 1200px
+  sidebar_width: 350px
+
+  hover:
+    shadow: true
+    scale: false
+
+  scroll_progress:
+    bar: false
+    percentage: true
+
+  busuanzi_counter:
+    enable: true
+    site_pv: true
+    site_uv: true
+    post_pv: true
+
+  pjax: true
+
+fontawesome:
+  thin: false
+  light: false
+  duotone: false
+  sharp_solid: false
+
+home_banner:
+  enable: true
+  image:
+    light: /images/wallhaven-wqery6-light.webp
+    dark: /images/wallhaven-wqery6-dark.webp
+
+  title: 勿在浮沙筑高台
+
+  subtitle:
+    text: []
+    typing_speed: 100
+    backing_speed: 80
+    starting_delay: 500
+    backing_delay: 1500
+    loop: true
+    smart_backspace: true
+
+  text_color:
+    light: "#fff"
+    dark: "#d1d1b6"
+
+  text_style:
+    title_size: 2.8rem
+    subtitle_size: 1.5rem
+    line_height: 1.2
+
+  custom_font:
+    enable: false
+    family:
+    url:
+
+  social_links:
+    enable: false
+    links:
+      github:
+      instagram:
+      zhihu:
+      twitter:
+      email:
+
+navbar:
+  auto_hide: false
+  color:
+    left: "#f78736" # 左边的颜色
+    right: "#367df7" # 右边的颜色
+    transparency: 35 # 导航栏的背景透明度 (10-99)
+
+  links:
+    Home:
+      path: /
+      icon: fa-regular fa-house
+
+    Archives:
+      path: /archives
+      icon: fa-regular fa-archive
+
+    Tags:
+      icon: fa-solid fa-tags
+      path: /tags
+
+  search:
+    enable: true
+    preload: true
+
+home:
+  article_date_format: YYYY-MM-DD HH:mm
+  categories:
+    enable: true
+    limit: 3
+
+  tags:
+    enable: true
+    limit: 3
+
+articles:
+  style:
+    font_size: 16px
+    line_height: 1.5
+    image_border_radius: 14px
+    image_alignment: center
+
+  word_count:
+    enable: true
+    count: true
+    min2read: true
+
+  author_label:
+    enable: true
+    auto: true
+    # list: [""]
+
+  code_block:
+    copy: true
+    style: mac
+    font:
+      enable: false
+      family:
+      url:
+
+  toc:
+    enable: true
+    max_depth: 3
+    number: false
+    expand: true
+    init_open: true
+
+  copyright: false
+
+  lazyload: true
+
+  recommendation:
+    enable: false
+    title: 推荐阅读
+    icon: fa-solid fa-bookmark
+    limit: 3
+    placeholder: /images/wallhaven-wqery6-light.webp
+    skip_dirs: []
+
+comment:
+  enable: true
+  system: waline
+  config:
+    waline:
+      serverUrl: https://blog-comment-two-kappa.vercel.app
+
+    # gitalk:
+    #   clientID:
+    #   clientSecret:
+    #   repo:
+    #   owner:
+
+    # twikoo:
+    #   version: 1.6.10
+    #   server_url:
+    #   region:
+
+footer:
+  runtime: true
+  icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
+  start: 2023/3/7 00:00:00
+  customize:
+  icp:
+    enable: false
+    number:
+    url:
+
+inject:
+  enable: false
+  head:
+    -
+    -
+  footer:
+    -
+    -
+
+plugins:
+  feed:
+    enable: false
+
+  aplayer:
+    enable: true
+    audios:
+      - name: Fake Love (Alternate)
+        artist: MDP
+        url: http://music.163.com/song/media/outer/url?id=1995166023.mp3
+        cover: https://p2.music.126.net/AomZhD1jl8W-34oqn6rV1g==/109951168027082421.jpg?param=60x60
+
+      - name: Something Just Like This
+        artist: The Chainsmokers，Coldplay
+        url: http://music.163.com/song/media/outer/url?id=461347998.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/69/15/1440780563.jpg
+
+      - name: Diamonds
+        artist: Rihanna
+        url: http://music.163.com/song/media/outer/url?id=26515713.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/8/86/825676404.jpg
+
+      - name: Summertime Sadness (Radio Mix)
+        artist: Lana Del Rey
+        url: http://music.163.com/song/media/outer/url?id=3025201.mp3
+        cover: https://p1.music.126.net/ACQD5qHu1KPSJjLFuirwxQ==/109951166193744111.jpg?param=60x60
+
+      - name: Someone Like You
+        artist: Adele
+        url: http://music.163.com/song/media/outer/url?id=16435049.mp3
+        cover: https://p2.music.126.net/qngLhAe2u1869TK-BWnwEA==/109951167057108608.jpg?param=60x60
+
+      - name: 光辉岁月
+        artist: Beyond
+        url: http://music.163.com/song/media/outer/url?id=346576.mp3
+        cover: http://p1.music.126.net/JOJvZc_7SqQjKf8TktQ_bw==/29686813951246.jpg?param=60x60
+
+      - name: 灰色轨迹
+        artist: Beyond
+        url: http://music.163.com/song/media/outer/url?id=32701152.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/12/63/172615399.jpg
+
+      - name: 海阔天空
+        artist: Beyond
+        url: http://music.163.com/song/media/outer/url?id=1357375695.mp3
+        cover: https://img4.kuwo.cn/star/albumcover/60/28/42/1776247091.jpg
+
+  mermaid:
+    enable: false
+    version: "9.3.0"
+
+page_templates:
+  friends_column: 3
+  tags_style: cloud
+
+cdn:
+  enable: false
+  provider: unpkg
