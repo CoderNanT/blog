@@ -1,7 +1,7 @@
 ---
   title: HTML+CSS
   date: "2023-03-07 10:00"
-  updated: "2023-03-12 10:55"
+  updated: "2023-03-07 10:00"
   tags: [HTML, CSS]
   categories: "系统课笔记"
 ---
