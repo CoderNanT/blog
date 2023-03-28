@@ -155,7 +155,7 @@ articles:
 
   toc:
     enable: true
-    max_depth: 3
+    max_depth: 6
     number: false
     expand: true
     init_open: true
