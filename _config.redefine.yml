@@ -270,4 +270,4 @@ page_templates:
 
 cdn:
   enable: false
-  provider: unpkg
+  provider: aliyun
