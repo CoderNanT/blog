@@ -266,7 +266,7 @@ plugins:
 
 page_templates:
   friends_column: 3
-  tags_style: cloud
+  tags_style: blur
 
 cdn:
   enable: false
