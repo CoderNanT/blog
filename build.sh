@@ -8,9 +8,6 @@ cp overlay-article-content.styl themes/redefine/source/css/layout/article-conten
 # 添加图片
 cp smile.png themes/redefine/source/images
 
-# 资源压缩
-npm install hexo-all-minifier
-
 # 本地测试用的
 # hexo g
 # hexo server

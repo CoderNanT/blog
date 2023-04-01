@@ -261,8 +261,8 @@ plugins:
         cover: https://img4.kuwo.cn/star/albumcover/60/28/42/1776247091.jpg
 
   mermaid:
-    enable: false
-    version: "9.3.0"
+    enable: true
+    version: "1.0.5"
 
 page_templates:
   friends_column: 3
