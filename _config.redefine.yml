@@ -123,7 +123,14 @@ navbar:
     preload: true
 
 home:
+  sidebar:
+    enable: true 
+    position: left 
+    announcement: 
+    links:
+
   article_date_format: YYYY-MM-DD HH:mm
+
   categories:
     enable: true
     limit: 3
