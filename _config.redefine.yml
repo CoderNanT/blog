@@ -90,13 +90,13 @@ home_banner:
     url:
 
   social_links:
-    enable: false
+    enable: true
     links:
-      github:
+      github: "https://github.com/CoderNanT"
       instagram:
       zhihu:
       twitter:
-      email:
+      email: "1445683324@qq.com"
 
 navbar:
   auto_hide: false
