@@ -117,6 +117,11 @@ navbar:
     Tags:
       icon: fa-solid fa-tags
       path: /tags
+    
+    link: 
+      icon: fa-regular fa-link
+      submenus:
+        ChatGPT: https://chatai.codernan.top
 
   search:
     enable: true
@@ -188,7 +193,7 @@ comment:
   system: waline
   config:
     waline:
-      serverUrl: https://waline-codingiove.vercel.app
+      serverUrl: http://waline.codernan.top
 
     # gitalk:
     #   clientID:
