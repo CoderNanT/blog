@@ -4,7 +4,6 @@
   updated: "2023-04-04 09:56"
   tags: "Git"
   categories: "系统课笔记"
-  comment: true
 ---
 
 # 认识版本控制
