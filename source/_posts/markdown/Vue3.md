@@ -189,7 +189,7 @@
   - 当**data中的数据发生改变**时，**对应的内容也会发生更新**
   - 当然，Mustache中不仅仅可以是data中的属性，也可以是一个**JavaScript的表达式**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -234,7 +234,7 @@
   - 当数据发生变化时，**元素或者组件以及其所有的子元素**将视为**静态内容**并且**跳过更新**
   - 该指令可以用于**性能优化**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -273,7 +273,7 @@
 
 - 用于更新元素的 textContent
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -299,7 +299,7 @@
 
   - 如果我们希望这个内容**被Vue可以解析出来**，那么可以**使用 v-html** 来展示
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -327,7 +327,7 @@
 
   - 跳过不需要编译的节点，加快编译的速度
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -352,7 +352,7 @@
 
   - 和 CSS 规则如 [v-cloak] { display: none } 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到组件实例准备完毕
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <style>
@@ -385,7 +385,7 @@
 
 - 该指令需要传入一个固定长度的依赖值数组进行比较，如果数组里的每个值都与最后一次的渲染相同，那么整个子树的更新将被跳过
 
-  ```vue
+  ```html
   <script src="https://unpkg.com/vue@next"></script>
   
   <div id="app">
@@ -442,7 +442,7 @@
 
   - 还是有很多的，比如图片的链接src、网站的链接href、动态绑定一些类、样式等等
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -491,7 +491,7 @@
 
   - 对象语法
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <style>
@@ -542,7 +542,7 @@
   
   - 数组语法
   
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <style>
@@ -597,7 +597,7 @@
 
   - 对象语法
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -626,7 +626,7 @@
   
   - 数组语法
   
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -654,7 +654,7 @@
   - 如果**属性名称不是固定**的，我们可以使用 **:[属性名]=“值”** 的格式来定义
   - 这种绑定的方式，我们称之为**动态绑定属性**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -678,7 +678,7 @@
 
   - 非常简单，我们可以直接使用 **v-bind 绑定一个 对象**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -734,7 +734,7 @@
 
 - v-on的多种使用方式
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <style>
@@ -797,7 +797,7 @@
 
 - 情况二：如果需要同时传入某个参数，同时需要event时，可以通过$event传入事件
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -848,7 +848,7 @@
   - .middle - 只当点击鼠标中键时触发
   - .passive - { passive: true } 模式添加侦听器
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <style>
@@ -897,7 +897,7 @@
   - 当条件为false时，其判断的内容完全不会被渲染或者会被销毁掉
   - 当条件为true时，才会真正渲染条件块中的内容
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -928,7 +928,7 @@
 
 - template元素可以当做不可见的包裹元素，并且在v-if上使用，但是最终template不会被渲染出来
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -964,7 +964,7 @@
 
 - v-show和v-if的用法看起来是一致的，也是根据一个条件决定是否显示元素或者组件
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <style>
@@ -1033,7 +1033,7 @@
   - 如果我们需要索引，可以使用格式 **"(item, index) in 数组"**
   - 注意上面的顺序：数组元素项item是在前面的，索引项index是在后面的
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1073,7 +1073,7 @@
 
 - v-for也可以遍历其他可迭代对象(Iterable)
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1124,7 +1124,7 @@
   - 上面的方法会直接修改原来的数组
   - 但是某些方法不会替换原来的数组，而是会生成新的数组，比如 filter()、concat() 和 slice()
   
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1232,7 +1232,7 @@
 
 - 我们先来看一个案例：这个案例是当我点击按钮时会在中间插入一个 f
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1350,7 +1350,7 @@
   - 选项：computed
   - 类型：{ [key: string]: Function | { get: Function，set: Function } }
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1397,7 +1397,7 @@
   - 在**数据不发生变化**时，计算属性是**不需要重新计算**的
   - 但是如果**依赖的数据发生变化**，在使用时，计算属性依然**会重新进行计算**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1451,7 +1451,7 @@
 
   - 这个时候我们也可以给计算属性设置一个**setter的方法**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1495,7 +1495,7 @@
   
 - 错误写法
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1555,7 +1555,7 @@
   - 选项：watch
   - 类型：{ [key: string]: string | Function | Object | Array }
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1617,7 +1617,7 @@
   - 这个时候我们使用**immediate选项**
   - 这个时候无论后面数据是否有变化，侦听的函数都会有限执行一次
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1663,7 +1663,7 @@
 
 - 字符串方法名
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1693,7 +1693,7 @@
   
 - 回调数组，它们会被逐一调用
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1745,7 +1745,7 @@
 
     - 第三个参数是额外的其他选项，比如deep、immediate
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1793,7 +1793,7 @@
   - 它会根据**控件类型**自动选取正确的方法来更新元素
   - 尽管有些神奇，**但 v-model 本质上不过是语法糖**，它**负责监听用户的输入事件来更新数据**，并在某种极端场景下进行一些特殊处理
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1820,7 +1820,7 @@
   - **v-bind绑定value属性的值**
   - **v-on绑定input事件**监听到函数中，函数会获取最新的值赋值到绑定的属性中
 
-  ```vue
+  ```html
   <input V-model="searchText"/>
   <!-- 等价于 -->
   <input :value-"searchText" @input="searchText = $event.target.value" />
@@ -1835,7 +1835,7 @@
   - 默认情况下，v-model在进行双向绑定时，绑定的是**input事件**，那么会在每次内容输入后就将最新的值和绑定的属性进行同步
   - 如果我们在v-model后跟上lazy修饰符，那么会将绑定的事件切换为 **change 事件**，只有在提交时（比如回车）才会触发
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1859,7 +1859,7 @@
 
 - 如果我们希望转换为**数字类型**，那么可以使用 **.number 修饰符**
 
-  ```vue
+  ```html
   <script src="https://unpkg.com/vue@next"></script>
   
   <div id="app">
@@ -1889,7 +1889,7 @@
 
 - 如果要自动过滤用户输入的守卫空白字符，可以给v-model添加 **.trim 修饰符**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -1975,7 +1975,7 @@
 
 - 之后，我们可以在**App组件的template中**直接**使用这个全局组件**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -2033,7 +2033,7 @@
   - 比如之前的App组件中，我们有data、computed、methods等选项了，事实上还可以有一个**components选项**
   - 该components选项对应的**是一个对象**，对象中的键值对是 **组件的名称: 组件对象**
 
-  ```vue
+  ```html
   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
   
   <div id="app">
@@ -2207,7 +2207,7 @@
 
   - <b>方式一：字符串数组，</b>数组中的字符串就是属性的名称
   
-  ```vue
+  ```html
   <template>
     <show-info name="strive" :age="20" :height="1.83" />
   </template>
@@ -2221,7 +2221,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>姓名: {{ name }}</h2>
@@ -2242,7 +2242,7 @@
   
   - <b>方式二：对象类型，</b>对象类型我们可以在指定属性名称的同时，指定它需要传递的类型、是否是必须的、默认值等等
   
-  ```vue
+  ```html
   <template>
     <show-info name="strive" :age="20" :height="1.83" show-message="哈哈哈哈" />
     <hr />
@@ -2258,7 +2258,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>姓名: {{ name }}</h2>
@@ -2296,7 +2296,7 @@
   - HTML 中的 **attribute 名是大小写不敏感的**，所以**浏览器会把所有大写字符解释为小写字符**
   - 这意味着当你**使用 DOM 中的模板**时，**camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名**
 
-  ```vue
+  ```html
   <show-info :age="10" showMessage="message - 1" />
   <show-info :age="10" show-message="message - 2" />
   ```
@@ -2314,11 +2314,11 @@
 
   - 当**组件有单个根节点**时，**非prop的属性将自动添加到根节点的属性中**
 
-  ```vue
+  ```html
   <show-info :age="20" aaa="bbb" class="active" />
   ```
 
-  ```vue
+  ```html
   <template>
     <div> <!-- aaa="bbb" class="active"-->
       <h2>姓名: {{ name }}</h2>
@@ -2339,7 +2339,7 @@
   - 禁用属性继承的**常见情况**是**需要将属性应用于根元素之外的其他元素**
   - 我们可以通过 **$attrs 来访问所有的非props的属性**
 
-  ```vue
+  ```html
   <template>
     <div :class="$attrs.class"></div>
   </template>
@@ -2349,7 +2349,7 @@
 
   - **多个根节点的属性如果没有显示的绑定**，那么会报警告，我们**必须手动的指定要绑定到哪一个属性**上
 
-  ```vue
+  ```html
   <template>
     <div class="root-1"></div>
     <div class="root-2" v-bind="$attrs"></div>
@@ -2371,7 +2371,7 @@
   - 其次，在**父组件中以v-on的方式传入要监听的事件名称**，并且绑定到对应的方法中
   - 最后，在子组件中发生某个事件的时候，**根据事件名称触发对应的事件**
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ counter }}</h2>
@@ -2396,7 +2396,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <button @click="btnClick(1)">+1</button>
@@ -2460,7 +2460,7 @@
 
   ![](https://cn.vuejs.org/assets/slots.dbdaf1e8.png)
 
-  ```vue
+  ```html
   <template>
     <div>
       <show-message title="标题-1">
@@ -2484,7 +2484,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <h2>{{ title }}</h2>
     <div class="content">
@@ -2513,7 +2513,7 @@
 
   - 我们会发现默认情况下每个插槽都会获取到我们插入的内容来显示
 
-  ```vue
+  ```html
   <template>
     <nav-bar>
       <button>按钮</button>
@@ -2531,7 +2531,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div class="nav-bar">
       <div class="left">
@@ -2557,7 +2557,7 @@
   - 具名插槽顾名思义就是给**插槽起一个名字 `<slot>`** 元素有一个**特殊的 attribute：name**
   - 一个**不带 name 的slot，会带有隐含的名字 default**
   
-  ```vue
+  ```html
   <template>
     <nav-bar>
       <template v-slot:left>
@@ -2583,7 +2583,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div class="nav-bar">
       <div class="left">
@@ -2619,7 +2619,7 @@
   - 比如 v-slot:left、v-slot:center 等等
   - 我们可以通过 **v-slot:[dynamicSlotName]** 方式动态绑定一个名称
 
-  ```vue
+  ```html
   <template>
     <!-- 只能放一个变量，不支持缩写 -->
     <nav-bar>
@@ -2660,7 +2660,7 @@
 
   - 这个Vue给我们提供了**作用域插槽**
 
-  ```vue
+  ```html
   <template>
     <nav-bar>
       <template #default="props">
@@ -2681,7 +2681,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <div>
       <slot v-bind="info" abc="哈哈哈"></slot>
@@ -2707,7 +2707,7 @@
 
 - 并且如果我们的插槽只有默认插槽时，**组件的标签**可以**被当做插槽的模板来使用**，这样，我们就可以将 v-slot 直接用在组件上
 
-  ```vue
+  ```html
   <template>
     <nav-bar>
       <template v-slot="props"></template>
@@ -2755,7 +2755,7 @@
 
   ![](https://s3.bmp.ovh/imgs/2023/04/06/07bef1c5aea7e72d.png)
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>App: {{ message }}</h2>
@@ -2779,7 +2779,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Home: {{ name }} - {{ age }} - {{ message }}</h2>
@@ -2812,7 +2812,7 @@
 
   - 这是因为**computed返回的是一个ref对象**，需要取出其中的**value来使用**
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>App: {{ message }}</h2>
@@ -2837,7 +2837,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Home: {{ name }} - {{ age }} - {{ message.value }}</h2>
@@ -2873,7 +2873,7 @@
 
 - 生命周期函数演练
 
-  ```vue
+  ```html
   <template>
     <h2>{{ counter }}</h2>
     <button @click="counter++">+1</button>
@@ -2928,7 +2928,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <h2>Home</h2>
   </template>
@@ -2959,7 +2959,7 @@
 
   - 它是一个对象，持有**注册过 ref 属性的所有 DOM 元素和组件实例**
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2 ref="title">Hello World</h2>
@@ -3004,7 +3004,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Banner</h2>
@@ -3028,7 +3028,7 @@
 
 - 动态组件是使用 **component 组件**，通过一个**特殊的属性 is** 来实现
 
-  ```vue
+  ```html
   <template>
     <div>
       <template v-for="item in tabs" :key="item">
@@ -3073,7 +3073,7 @@
   - 全局注册：可以是通过**component函数注册的组件**
   - 局部注册：在一个**组件对象的components对象中注册的组件**
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Home: {{ name }} - {{ age }}</h2>
@@ -3094,7 +3094,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>About</h2>
@@ -3123,7 +3123,7 @@
 
 - 但是，在开发中某些情况我们希望继续保持组件的状态，而不是销毁掉，这个时候我们就可以**使用一个内置组件：keep-alive**
 
-  ```vue
+  ```html
   <keep-alive>
     <component :is="currentTab" name="strive" :age="20" @HomeBtnClick="HomeClick" />
   </keep-alive>
@@ -3144,7 +3144,7 @@
   - 二者都可以用逗号**分隔字符串、正则表达式或一个数组**来表示
   - 匹配首先检查组件自身的 **name 选项**
 
-  ```vue
+  ```html
   <!-- include: 组件的名称来自于组件定义时 name 选项 -->
   <keep-alive include="home,about">
     <component :is="currentTab" name="strive" :age="20" @HomeBtnClick="HomeClick" />
@@ -3160,7 +3160,7 @@
   - 但是有时候我们确实希望监听到何时重新进入到了组件，何时离开了组件
   - 这个时候我们可以使用 **activated 和 deactivated** 这两个生命周期钩子函数来监听
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Home: {{ name }} - {{ age }}</h2>
@@ -3236,7 +3236,7 @@
 
 - 工厂函数类型一的写法
 
-  ```vue
+  ```html
   <script>
   import { defineAsyncComponent } from "vue";
   
@@ -3250,7 +3250,7 @@
 
 - 对象类型
 
-  ```vue
+  ```html
   <script>
   import { defineAsyncComponent } from "vue";
   
@@ -3289,7 +3289,7 @@
 
   - 我们会发现和**input元素不同的只是属性的名称和事件触发的名称**而已
 
-  ```vue
+  ```html
   <counter v-model="appCounter"></counter>
   <!--相当于-->
   <!--子组件内部还是要触发 update:modelValue 这个事件的-->
@@ -3306,7 +3306,7 @@
   - 我们知道，**默认情况下**的v-model其实是**绑定了 modelValue 属性**和 **@update:modelValue** 的事件
   - 如果我们希望绑定更多，可以给**v-model传入一个参数**，那么这个参数的名称就是**我们绑定属性的名称**
 
-  ```vue
+  ```html
   <template>
     <div>
       <counter v-model:counter="appCounter" v-model:message="appMessage" />
@@ -3325,7 +3325,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Counter: {{ counter }}</h2>
@@ -3367,7 +3367,7 @@
   - 一个Mixin对象可以包含**任何组件选项**
   - 当组件使用Mixin对象时，所有**Mixin对象的选项将被 混合 进入该组件本身的选项中**
 
-  ```vue
+  ```html
   <template>
     <div>
       <Home />
@@ -3383,7 +3383,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <h2>Home组件</h2>
   </template>
@@ -3516,7 +3516,7 @@
 
 - 甚至是我们可以**返回一个执行函数**来**代替在methods中定义的方法**
 
-  ```vue
+  ```html
   <template>
     <div>{{ count }}</div>
     <button @click="increment">+1</button>
@@ -3555,7 +3555,7 @@
 
 - 如果想在setup中定义的数据提供响应式的特性，那么我们可以**使用reactive的函数**
 
-  ```vue
+  ```html
   <template>
     <div>{{ info }} - {{ address }}</div>
   </template>
@@ -3596,7 +3596,7 @@
 
   - 但是在 **setup 函数内部**，它依然是一个 **ref 引用**， 所以对其进行操作时，我们依然需要**使用 ref.value 的方式**
 
-  ```vue
+  ```html
   <template>
     <div>{{ count }}</div>
     <button @click="increment">+1</button>
@@ -3629,7 +3629,7 @@
 
 - 模板中的解包是**浅层的解包**，如果我们的代码是下面的方式
 
-  ```vue
+  ```html
   <template>
     <div>
       <!-- 默认情况下在 template 中使用 ref 时, vue 会自动对其进行解包(取出其中value) -->
@@ -3659,7 +3659,7 @@
 
 - 如果我们**将ref放到一个reactive的属性**当中，那么**在模板中使用时，它会自动解包**
 
-  ```vue
+  ```html
   <template>
     <div>
       <!-- 默认情况下在 template 中使用 ref 时, vue 会自动对其进行解包(取出其中value) -->
@@ -3716,7 +3716,7 @@
 
 - 其实本质上就**是readonly返回的对象的setter方法**被劫持了而已
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ origin.name }} - {{ origin.age }}</h2>
@@ -3776,7 +3776,7 @@
   - 创建一个响应式代理，它跟踪其自身 property 的响应性，但**不执行嵌套对象的深层响应式转换** (深层还是原生对象)
   - 自身属性发生修改时会更新页面，而嵌套的对象属性发生改变不会更新页面
 
-  ```vue
+  ```html
   <template>
     <div>
       <div>{{ info }}</div>
@@ -3810,7 +3810,7 @@
   - 创建一个 proxy，使其自身的 property 为只读，但**不执行嵌套对象的深度只读转换**（深层还是可读、可写的）
   - 自身属性和嵌套的对象属性都不会更新页面
 
-  ```vue
+  ```html
   <template>
     <div>
       <div>{{ info }}</div>
@@ -3852,7 +3852,7 @@
 
 - 这种做法相当于已经在**state.name和ref.value**之间建立了 **链接**，**任何一个修改都会引起另外一个变化**
 
-  ```vue
+  ```html
   <template>
     <div>{{ name }} - {{ age }}</div>
     <button @click="changeName">changeName</button>
@@ -3889,7 +3889,7 @@
 
 - 如果我们只希望转换一个**reactive对象中的属性为ref**，那么可以**使用toRef的方法**
 
-  ```vue
+  ```html
   <template>
     <div>{{ name }} - {{ age }}</div>
     <button @click="changeName">changeName</button>
@@ -3941,7 +3941,7 @@
 
   - **手动触发和 shallowRef 相关联的副作用**
 
-  ```vue
+  ```html
   <template>
     <div>{{ info.count }}</div>
     <button @click="changeCount">changeCount</button>
@@ -4023,7 +4023,7 @@
   - <b>方式一：</b>接收一个 **getter 函数**，并为 getter 函数返回的值，返回一个不变的 ref 对象
   - <b>方式二：</b>接收一个具有 **get 和 set 的对象**，返回一个可变的（可读写）ref 对象
 
-  ```vue
+  ```html
   <template>
     <h2>{{ fullName }}</h2>
   
@@ -4068,7 +4068,7 @@
 
   - 其实非常简单，我们只需要定义一个ref对象，绑定到元素或者组件的ref属性上即可
 
-  ```vue
+  ```html
   <template>
     <!-- 1.获取元素 -->
     <h2 ref="titleRef">标题</h2>
@@ -4106,7 +4106,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div>ShowInfo</div>
   </template>
@@ -4218,7 +4218,7 @@
   - watch需要**侦听特定的数据源**，并且执行其回调函数
   - 默认情况下它是惰性的，只有当被侦听的源发生变化时才会执行回调
 
-  ```vue
+  ```html
   <template>
     <h1>{{ count }}</h1>
     <button @click="count++">+1</button>
@@ -4282,7 +4282,7 @@
 
 - 如果在发生某些情况下，我们希望停止侦听，这个时候我们可以获取watchEffect的**返回值函数，调用该函数**即可
 
-  ```vue
+  ```html
   <template>
     <h1>{{ count }}</h1>
     <button @click="count++">+1</button>
@@ -4321,7 +4321,7 @@
 
 - 使用这个语法，需要将 setup attribute 添加到 script 代码块上
 
-  ```vue
+  ```html
   <script setup></script>
   ```
 
@@ -4338,7 +4338,7 @@
 
 - 响应式数据需要通过ref、reactive来创建
 
-  ```vue
+  ```html
   <template>
     <h1>{{ message }}</h1>
     <button @click="changeMessage">changeMessage</button>
@@ -4360,7 +4360,7 @@
 
 - 为了在声明 props 和 emits 选项时获得完整的类型推断支持，我们可以使用 defineProps 和 defineEmits API，它们将自动地在 script setup 中可用
 
-  ```vue
+  ```html
   <template>
     <h1>App: {{ message }}</h1>
   
@@ -4385,7 +4385,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <h1>ShowInfo: {{ name }} - {{ age }}</h1>
     <button @click="showInfoBtnClick">showInfoBtnClick</button>
@@ -4414,7 +4414,7 @@
 
 - 通过 defineExpose 编译器宏来显式指定在 script setup 组件中要暴露出去的 property
 
-  ```vue
+  ```html
   <template>
     <h2>App</h2>
     <button @click="getShowInfoFoo">getShowInfoFoo</button>
@@ -4434,7 +4434,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>ShowInfo</h2>
@@ -4667,7 +4667,7 @@
 
 - 第四步：路由使用: 通过 router-link 和 router-view
 
-  ```vue
+  ```html
   <template>
     <div class="app">
       <h2>App Content</h2>
@@ -4794,7 +4794,7 @@
     - 该 hook 会返回一个 Route 对象，对象中保存着当前路由相关的值
   
   
-  ```vue
+  ```html
   <template>
     <h1>User - {{ $route.params.id }}</h1>
   </template>
@@ -4829,7 +4829,7 @@
 
 - 我们可以通过 $route.params.pathMatch 获取到传入的参数
 
-  ```vue
+  ```html
   <template>
     <div class="not-found">
       <h2>
@@ -4888,7 +4888,7 @@
   },
   ```
   
-  ```vue
+  ```html
   <template>
     <h2>Home</h2>
   
@@ -4925,7 +4925,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Message: {{ $route.query }}</h2>
@@ -5176,7 +5176,7 @@
 
 - 在模板中使用
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.state.counter }}</h2>
@@ -5186,7 +5186,7 @@
 
 - 在 options api 中使用
 
-  ```vue
+  ```html
   <script>
     export default {
       created() {
@@ -5198,7 +5198,7 @@
 
 - 在 setup 中使用
 
-  ```vue
+  ```html
   <script setup>
   import { useStore } from "vuex";
   
@@ -5217,7 +5217,7 @@
   - mapState的方式一：数组类型
   - 也可以使用**展开运算符和原来有的computed**混合在一起
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ counter }}</h2>
@@ -5288,7 +5288,7 @@
   export default store;
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.getters.doubleCounter }}</h2>
@@ -5310,7 +5310,7 @@
   - mapGetters的方式一：数组类型
   - 也可以使用**展开运算符和原来有的computed**混合在一起
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ doubleCounter }}</h2>
@@ -5379,7 +5379,7 @@
   export default store;
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.state.counter }}</h2>
@@ -5420,7 +5420,7 @@
   - mapMutations的方式一：数组类型
   - 也可以使用**展开运算符和原来有的methods**混合在一起
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.state.counter }}</h2>
@@ -5504,7 +5504,7 @@
   export default store;
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.state.message }}</h2>
@@ -5544,7 +5544,7 @@
   - mapActions的方式一：数组类型
   - 也可以使用**展开运算符和原来有的methods**混合在一起
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.state.message }}</h2>
@@ -5609,7 +5609,7 @@
   export default store;
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.state.message }}</h2>
@@ -5691,7 +5691,7 @@
   export default Home;
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <!-- 1.使用 state 时, 是需要 state.moduleName.xxx -->
@@ -5769,7 +5769,7 @@
   export default Home;
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ $store.state.Home.message }}</h2>
@@ -5921,7 +5921,7 @@
 
 - Store在它被使用之前是不会创建的，我们可以通过调用**use函数**来使用Store
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ homeStore.message }}</h2>
@@ -5939,7 +5939,7 @@
 
   - 为了从 Store 中提取属性同时保持其响应式，您需要使用**storeToRefs()**
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ homeStore.message }}</h2>
@@ -5973,7 +5973,7 @@
 
   - 默认情况下，您可以通过 store 实例访问状态来直接读取和写入状态
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ homeStore.message }} - {{ homeStore.counter }}</h2>
@@ -5997,7 +5997,7 @@
 
   - 可以通过调用 store 上的 $reset() 方法将状态 重置 到其初始值
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ homeStore.message }} - {{ homeStore.counter }}</h2>
@@ -6026,7 +6026,7 @@
   - 除了直接用 store.counter++ 修改 store，你还可以调用 $patch 方法
   - 它允许您使用部分 state 对象**同时应用多个更改**
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ homeStore.message }} - {{ homeStore.counter }}</h2>
@@ -6094,7 +6094,7 @@
 
 - 访问当前store的Getters
 
-  ```vue
+  ```html
   <script setup>
   import useHome from "./stores/home";
   
@@ -6161,7 +6161,7 @@
   export default useHome;
   ```
   
-  ```vue
+  ```html
   <template>
     <div>
       <h2>{{ homeStore.counter }}</h2>
@@ -6199,7 +6199,7 @@
   - 自定义局部指令：组件中通过 **directives 选项**，只能在当前组件中使用
   - 自定义全局指令：app的 **directive 方法**，可以在任意组件中被使用
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2 v-insertText1></h2>
@@ -6259,7 +6259,7 @@
   - beforeUnmount：在卸载绑定元素的父组件之前调用
   - unmounted：当指令与元素解除绑定且父组件已卸载时，只调用一次
 
-  ```vue
+  ```html
   <template>
     <div>
       <button @click="counter++">+1</button>
@@ -6313,7 +6313,7 @@
 
 - 在我们的生命周期中，我们可以**通过 bindings 获取到对应的内容**
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2 v-unit:info.aaa.bbb="'¥'">1000</h2>
@@ -6353,7 +6353,7 @@
       - <b>to：</b>指定将其中的内容移动到的目标元素，可以使用选择器
       - <b>disabled：</b>是否禁用 teleport 的功能
 
-  ```vue
+  ```html
   <template>
     <div>
       <teleport to="body">
@@ -6388,7 +6388,7 @@
   - <b>default：</b>如果 default 可以显示，那么显示 default 的内容
   - <b>fallback：</b>如果 default 无法显示，那么会显示 fallback 插槽的内容
 
-  ```vue
+  ```html
   <template>
     <div class="app">
       <suspense>
@@ -6410,7 +6410,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <template>
     <div class="async-home">
       <h2>AsyncHome</h2>
@@ -6495,7 +6495,7 @@
   - 如果会产生歧义，可以**将null作为第二个参数传入**，将**children作为第三个参数传入**
   - 
 
-  ```vue
+  ```html
   <!-- Vue2 -->
   <script>
   import { h } from "vue";
@@ -6527,7 +6527,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <!--
   <script>
   import { h, ref } from "vue";
@@ -6581,7 +6581,7 @@
   </script>
   ```
 
-  ```vue
+  ```html
   <template>
     <div>
       <h2>Home Page</h2>
@@ -6622,7 +6622,7 @@
   });
   ```
 
-  ```vue
+  ```html
   <!-- Vue2 -->
   <script lang="jsx">
   export default {
@@ -6638,7 +6638,7 @@
   </script>
   ```
   
-  ```vue
+  ```html
   <!-- 
   <script lang="jsx">
   import { ref } from "vue";
@@ -6707,7 +6707,7 @@
   - Hello World的显示和隐藏
   - 通过下面的代码实现，是不会有任何动画效果的
 
-  ```vue
+  ```html
   <template>
     <div>
       <button @click="isShow = !isShow">切换</button>
@@ -6736,7 +6736,7 @@
   - 动态组件
   - 组件根节点
 
-  ```vue
+  ```html
   <template>
     <div>
       <button @click="isShow = !isShow">切换</button>
@@ -6817,7 +6817,7 @@
 
 - 前面我们是**通过transition来实现的动画效果**，另外我们也**可以通过animation来实现**
 
-  ```vue
+  ```html
   <template>
     <div>
       <div>
@@ -6878,7 +6878,7 @@
   - 并且在这个情况下可能**某一个动画执行结束时**，**另外一个动画还没有结束**
   - 在这种情况下，我们可以**设置 type 属性为 animation 或者 transition** 来明确的告知Vue监听的类型
 
-  ```vue
+  ```html
   <transition name="shy" type="transition">
     <h2 v-if="isShow">哈哈哈哈</h2>
   </transition>
@@ -6895,7 +6895,7 @@
   - **number类型**：同时设置进入和离开的过渡时间
   - **object类型**：分别设置进入和离开的过渡时间
 
-  ```vue
+  ```html
   <transition name="shy" :duration="1000">
     <h2 v-if="isShow">哈哈哈哈</h2>
   </transition>
@@ -6921,7 +6921,7 @@
   - in-out：新元素先进行过渡，完成之后当前元素过渡离开
   - out-in：当前元素先进行过渡，完成之后新元素过渡进入
 
-  ```vue
+  ```html
   <template>
     <div>
       <button @click="isShow = !isShow">切换</button>
@@ -6981,7 +6981,7 @@
 
 - 默认情况下，**首次渲染的时候是没有动画的**，如果我们**希望给他添加上去动画，那么就可以增加另外一个属性appear**
 
-  ```vue
+  ```html
   <transition appear>
   	<h2 v-if="isShow">哈哈哈哈</h2>
   </transition>
@@ -7007,7 +7007,7 @@
   - 内部元素总是**需要提供唯一的 key attribute 值**
   - **CSS 过渡的类将会应用在内部的元素**中，而**不是这个组/容器本身**
 
-  ```vue
+  ```html
   <template>
     <div>
       <button @click="addNumber">添加数字</button>
