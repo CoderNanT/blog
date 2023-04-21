@@ -3264,12 +3264,12 @@
         var message = "test message";
         var boxEl = document.querySelector(".box");
         console.log(boxEl);
-  	  -->
+      -->
       <script src="./js/test.js" defer></script>
       <!-- demo.js
         console.log("demo");
         console.log(message);
-  	  -->
+      -->
       <script src="./js/demo.js" defer></script>
     </head>
   
@@ -3288,12 +3288,12 @@
   
       <h1>哈哈哈哈啊</h1>
       <!-- 执行流程:
-  	 			test
-  	 			<div class="box"></div>
-       		demo
-  			 	test message
-  	 			DOMContentLoaded
-  	  -->
+           test
+           <div class="box"></div>
+           demo
+           test message
+           DOMContentLoaded
+      -->
     </body>
   </html>
   ```
@@ -4372,7 +4372,7 @@
   Object.defineProperty(obj, "name", {
     configurable: false, // 告诉js引擎, obj对象的 name 属性不可以被删除
   });
-  	
+    
   delete obj.name;
   console.log(obj); // {name: '张三', age: 18}
   ```
@@ -5974,7 +5974,7 @@
   let info = "Hello info";
   function test() {
     // console.log(info); // Cannot access 'info' before initialization
-  	const info = "哈哈哈哈";
+    const info = "哈哈哈哈";
   }
   test();
   ```
@@ -7065,7 +7065,7 @@
       // 2.好处二: Reflect.set方法有返回Boolean值, 可以判断本次操作是否成功
       /*
          3.好处三:
-         	 > receiver就是外层Proxy对象
+            > receiver就是外层Proxy对象
            > Reflect.set/get最后一个参数, 可以决定对象访问器setter/getter的this指向
       */
       const isSuccess = Reflect.set(target, key, newValue, receiver);
@@ -8223,7 +8223,7 @@
   }
   
   foo().then((res) => console.log("成功", res))
-    	 .catch((err) => console.log("失败", err)); // 失败 错误信息
+       .catch((err) => console.log("失败", err)); // 失败 错误信息
   ```
 
 
@@ -8337,8 +8337,8 @@
     2
     script end
   
-  	then1
-  	queueMicrotask1
+    then1
+    queueMicrotask1
     then3
   
     setTimeout1
@@ -8848,10 +8848,10 @@
   console.log(message.match(reg1)); // ['903', '123']
   
   const htmlElement = `
-  	<div>
-  		<span>哈哈哈</span>
-  		<h2>我是标题</h2>
-  	</div>
+    <div>
+      <span>哈哈哈</span>
+      <h2>我是标题</h2>
+    </div>
   `;
   const reg2 = /<\/?[a-z][a-z0-9]*>/gi;
   console.log(htmlElement.match(reg2));
@@ -8949,27 +8949,27 @@
   const iterator = message.matchAll(reg1);
   for (const item of iterator) {
     console.log(item);
-  	/* 
-  	[
+    /* 
+    [
       0: "《黄金时代》"
       1: "黄金时代"
       groups: {bookName: '黄金时代'}
       index: 10
       input: "我最喜欢的两本书: 《黄金时代》和《沉默的大多数》"
       length: 2
-  	]
-  	*/
+    ]
+    */
   
-  	/* 
-  	[
-  		0: "《沉默的大多数》"
-  		1: "沉默的大多数"
+    /* 
+    [
+      0: "《沉默的大多数》"
+      1: "沉默的大多数"
       groups: {bookName: '沉默的大多数'}
       index: 17
       input: "我最喜欢的两本书: 《黄金时代》和《沉默的大多数》"
       length: 2
-  	] 
-  	*/
+    ] 
+    */
   }
   ```
 
