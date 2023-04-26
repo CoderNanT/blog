@@ -1,6 +1,6 @@
 npm install
 
-git clone https://github.com/EvanNotFound/hexo-theme-redefine.git themes/redefine
+git clone https://github.com/EvanNotFound/hexo-theme-redefine.git
 
 # 覆盖源文件（解决设置 TOC 目录模块的宽度无效问题）
 cp overlay-article-content.styl themes/redefine/source/css/layout/article-content.styl
