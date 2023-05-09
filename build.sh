@@ -1,6 +1,10 @@
-npm install
+# npm install
+
+cd themes
 
 git clone https://github.com/EvanNotFound/hexo-theme-redefine.git
+
+cd ..
 
 mv themes/hexo-theme-redefine themes/redefine
 
