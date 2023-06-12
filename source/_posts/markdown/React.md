@@ -3731,7 +3731,7 @@ root.render(<App />);
 - 这个过程非常简单
 
   - 开发一个 Not Found 页面
-  - 配置对应的 Route，并且设置**path 为\***即可
+  - 配置对应的 Route，并且设置<b>path为*</b>即可
 
   ```jsx
   // app.jsx
